@@ -1,7 +1,9 @@
 # CAPY WEB UI
+
 User management, analytics, event planning, and more!
 
 ## File Structure
+
 ```
 webui/
 ├── public/
@@ -22,61 +24,91 @@ webui/
 ```
 
 ## Cloning the Repo
+
 There are 2 options:
+
 ### HTTPS
-```
+
+```bash
 git clone https://github.com/CAPY-RPI/webui.git
 ```
+
 ### SSH
-```
+
+```bash
 git clone git@github.com:CAPY-RPI/webui.git
 ```
 
 ## Prerequisites
+
 - Node.js (v18 or newer)
 - npm (comes bundled with Node.js)
 
 ## Running Locally
-_From the root level of the repository_
+
+From the root level of the repository
+
 ### Install Dependencies
-```
+
+```bash
 npm install
 ```
+
 ### Run the Site
-```
+
+```bash
 npm run dev
 ```
-This starts the development server with Hot Module Replacement. Any changes you make will be instantly displayed without reloading!
+
+This starts the development server with Hot Module Replacement. Any changes you
+make will be instantly displayed without reloading!
 
 ## Environment Variables
+
 Coming soon!
 
 ## Linting / Formatting
+
 Currently, we use Stylelint (CSS), ESLint (JS), and Prettier (All File Formatting).
+
 ### Running Stylelint (optional --fix)
-```
+
+```bash
 npx stylelint "**/*.css" --fix
 ```
+
 ### Running ESLint
-```
+
+```bash
 npx eslint . --fix
 ```
+
 ### Running Prettier
-#### Check:
-```
+
+#### Prettier Check
+
+```bash
 npx prettier . --check
 ```
-#### Write:
+
+#### Apply Fixes
+
 ```
 npx prettier . --write
 ```
+
 ### The Lint Script
+
 _Runs all 3 linters._
-#### Check:
-```
+
+#### Check Lint Script
+
+```bash
 npm run lint-check
 ```
-#### Fix:
-```
+
+#### Fix Lint Script
+
+```bash
 npm run lint-fix
 ```
