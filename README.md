@@ -28,6 +28,35 @@ npm run dev
 ```
 This starts the development server with Hot Module Replacement. Any changes you make will be instantly displayed without reloading!
 
-### Environment Variables
+## Environment Variables
 Coming soon!
 
+## Linting / Formatting
+Currently, we use Stylelint (CSS), ESLint (JS), and Prettier (All File Formatting).
+### Running Stylelint (optional --fix)
+```
+npx stylelint "**/*.css" --fix
+```
+### Running ESLint
+```
+npx eslint . --fix
+```
+### Running Prettier
+#### Check:
+```
+npx prettier . --check
+```
+#### Write:
+```
+npx prettier . --write
+```
+### The Lint Script
+_Runs all 3 linters._
+#### Check:
+```
+npm run lint-check
+```
+#### Fix:
+```
+npm run lint-fix
+```
