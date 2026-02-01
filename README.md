@@ -1,6 +1,26 @@
 # CAPY WEB UI
 User management, analytics, event planning, and more!
 
+## File Structure
+```
+webui/
+├── public/
+├── src/        
+|   ├── assets/
+|   ├── components/
+|   ├── css/
+│      ├── index.css     # Global CSS files
+|   ├── hooks/
+|   ├── pages/
+|   ├── types/
+|   ├── utils/
+|   ├── App.tsx          # Define routes
+|   ├── main.tsx         # Launch    
+├── index.html
+├── package.json
+├── <configs>
+```
+
 ## Cloning the Repo
 There are 2 options:
 ### HTTPS
