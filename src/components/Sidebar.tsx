@@ -2,8 +2,8 @@ import '../css/sidebar.css';
 import SidebarLink from './SidebarLink.tsx';
 
 type SidebarProps = {
-  collapsed: boolean,
-  onToggle: () => void,
+    collapsed: boolean;
+    onToggle: () => void;
 };
 
 export default function Sidebar({ collapsed, onToggle }: SidebarProps) {
@@ -11,7 +11,7 @@ export default function Sidebar({ collapsed, onToggle }: SidebarProps) {
         <div className={`sidebar ${collapsed ? 'collapsed' : ''}`}>
             <div className="sidebar-header">
                 <button className="collapse-toggle" onClick={onToggle}>
-                    {collapsed ? "O" : "Collapse"}
+                    {collapsed ? 'O' : 'Collapse'}
                 </button>
             </div>
             <div className="main-sidebar-link-container">

@@ -3,6 +3,4 @@ import './css/index.css';
 import './css/colors.css';
 import App from './App.tsx';
 
-createRoot(document.getElementById('root')!).render(
-    <App />
-);
+createRoot(document.getElementById('root')!).render(<App />);

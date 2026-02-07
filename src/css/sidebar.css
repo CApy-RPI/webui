@@ -5,8 +5,7 @@
     flex-direction: column;
     width: 16rem;
     background: var(--sidebar-bg);
-    padding: 0.5rem 0 0.5rem 0;
-
+    padding: 0.5rem 0;
     transition: width 500ms ease;
 }
 
@@ -20,7 +19,7 @@
     flex-direction: row;
     align-items: center;
     width: 100%;
-    margin: 0 0 1rem 0;
+    margin: 0 0 1rem;
 }
 
 .collapse-toggle {
@@ -28,9 +27,8 @@
 }
 
 .sidebar.collapsed .collapse-toggle {
-    margin: 0 auto 0 auto;
+    margin: 0 auto;
 }
-
 
 .sidebar-title {
     flex-grow: 1;
@@ -53,7 +51,6 @@
     cursor: pointer;
     text-decoration: none;
     color: white;
-
     display: flex;
     flex-direction: row;
     align-items: center;

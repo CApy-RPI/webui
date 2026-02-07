@@ -1,24 +1,21 @@
 /* Layout that each page will follow */
 import '../css/app-layout.css';
-import { Outlet } from "react-router-dom";
-import { useCollapseSidebar } from "../hooks/useCollapseSidebar";
+import { Outlet } from 'react-router-dom';
+import { useCollapseSidebar } from '../hooks/useCollapseSidebar';
 
 import Header from './Header.tsx';
 import Sidebar from './Sidebar.tsx';
 
 export default function AppLayout() {
-    const [collapsed, setCollapsed] = useCollapseSidebar(
-        "sidebar-collapsed",
-        false
-    );
+    const [collapsed, setCollapsed] = useCollapseSidebar('sidebar-collapsed', false);
 
     const toggleSidebar = () => {
-        setCollapsed(prev => !prev);
+        setCollapsed((prev) => !prev);
     };
 
     return (
         <div className="main-app-container">
-            <Header/>
+            <Header />
             <div className="app-sidebar-content-container">
                 <Sidebar collapsed={collapsed} onToggle={toggleSidebar} />
                 <div className="app-content">

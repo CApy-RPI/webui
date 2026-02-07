@@ -3,11 +3,10 @@
     flex-direction: row;
     gap: 2rem;
     align-items: center;
-
     width: 100%;
     background: var(--header-bg);
     height: 5rem;
-    margin: 0 0 1rem 0;
+    margin: 0 0 1rem;
     padding: 1rem;
 }
 
