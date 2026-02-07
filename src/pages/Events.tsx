@@ -1,9 +1,9 @@
-export default function Dashboard() {
+export default function Events() {
 
     return (
         <>
             <div>
-                <h1>My Dashboard</h1>
+                <h1>My Events</h1>
             </div>
         </>
     );
