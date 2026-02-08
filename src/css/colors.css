@@ -1,8 +1,13 @@
 /* All of the Web UI's color variables in one place */
 
 :root {
-    --site-bg: #1b1b1c;
-    --header-bg: #222b5e;
-    --sidebar-bg: #344154;
-    --sidebar-active-link-bg: #4780a3;
+    --site-bg: #ffffff;
+    --header-bg: #ffffff;
+    --sidebar-bg: #ffffff;
+    --sidebar-link-hover-bg: #f4f4f4;
+    --sidebar-active-link-bg: #e4e4e4;
+
+    --standard-white: #ffffff;
+    --standard-black: #000000;
+    --standard-text: #1C1C1C;
 }
