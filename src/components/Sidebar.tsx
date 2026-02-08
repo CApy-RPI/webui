@@ -2,8 +2,16 @@ import '../css/sidebar.css';
 import SidebarLink from './SidebarLink.tsx';
 
 // Icon Imports
-import { Bars3Icon, HomeIcon, StarIcon, CalendarDaysIcon, UserGroupIcon, BellAlertIcon, UserCircleIcon, Cog8ToothIcon } from "@heroicons/react/24/solid";
-
+import {
+    Bars3Icon,
+    HomeIcon,
+    StarIcon,
+    CalendarDaysIcon,
+    UserGroupIcon,
+    BellAlertIcon,
+    UserCircleIcon,
+    Cog8ToothIcon,
+} from '@heroicons/react/24/solid';
 
 type SidebarProps = {
     collapsed: boolean;
@@ -16,7 +24,7 @@ export default function Sidebar({ collapsed, onToggle }: SidebarProps) {
             <div className="sidebar-header">
                 <div className="toggle-spacer" />
                 <button className="collapse-toggle" onClick={onToggle}>
-                    <Bars3Icon/>
+                    <Bars3Icon />
                 </button>
             </div>
             <div className="main-sidebar-link-container">
