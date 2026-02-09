@@ -2,12 +2,7 @@
 
 import {
   Menubar,
-  MenubarContent,
-  MenubarGroup,
-  MenubarItem,
   MenubarMenu,
-  MenubarSeparator,
-  MenubarShortcut,
   MenubarTrigger,
 } from "@/components/ui/menubar"
 
@@ -20,6 +15,7 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
+import { useNavigate } from 'react-router-dom';
 
 import { Button } from "@/components/ui/button";
 import { Chrome, Mail } from "lucide-react";
