@@ -1,8 +1,1 @@
-/* All of the Web UI's color variables in one place */
 
-:root {
-    --site-bg: #1b1b1c;
-    --header-bg: #222b5e;
-    --sidebar-bg: #344154;
-    --sidebar-active-link-bg: #4780a3;
-}
