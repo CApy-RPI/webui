@@ -29,10 +29,10 @@ const lowerItems = [
 export function AppSidebar() {
   return (
     <Sidebar collapsible="icon">
-      {/* HEADER */}
+      {/* HEADER
       <SidebarHeader className="h-16 flex items-center px-4 border-b">
         <span className="font-bold">CAPY UI</span>
-      </SidebarHeader>
+      </SidebarHeader> */}
       {/* CONTENT */}
       <SidebarContent>
         {/* Upper section for Dashboard, Events, and Notifications */}

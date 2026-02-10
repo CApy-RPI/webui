@@ -1,15 +1,29 @@
 @import "tailwindcss";
 
-body {
-    margin: 0;
-    display: flex;
-    place-items: center;
-    min-width: 320px;
-    min-height: 100vh;
+@theme {
+  /* Mapping groupmate's custom variables to Tailwind */
+  --color-background: var(--site-bg);
+  --color-foreground: #ffffff;
+  
+  --color-sidebar: var(--sidebar-bg);
+  --color-sidebar-foreground: #ffffff;
+  --color-sidebar-accent: var(--sidebar-active-link-bg);
+  --color-sidebar-accent-foreground: #ffffff;
+  --color-sidebar-border: #3f3f46;
+
+  --color-header: var(--header-bg);
+  
+  --radius-md: 0.5rem;
 }
 
-*,
-*::before,
-*::after {
-    box-sizing: border-box;
+:root {
+  /* Exact colors from css/colors.css */
+  --site-bg: #1b1b1c;
+  --header-bg: #222b5e;
+  --sidebar-bg: #344154;
+  --sidebar-active-link-bg: #4780a3;
+
+  /* Layout dimensions from css/sidebar.css and css/header.css */
+  --sidebar-width: 16rem;
+  --header-height: 5rem;
 }

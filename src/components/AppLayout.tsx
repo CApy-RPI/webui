@@ -10,11 +10,13 @@ import Header from './Header';
 
 export default function AppLayout() {
     return (
+        
         <SidebarProvider>
             {/* The new shadcn sidebar component */}
             <AppSidebar />
             
             <SidebarInset>
+                <Header />
                 {/* Top Bar: This contains the toggle button 
                    and your existing Header component 
                 */}
