@@ -7,7 +7,9 @@ import {
   SidebarMenu, 
   SidebarMenuButton, 
   SidebarMenuItem,
-  SidebarRail
+  SidebarRail,
+  SidebarFooter,
+  SidebarGroupLabel
 } from "@/components/ui/sidebar"
 import { NavLink } from "react-router-dom"
 import { LayoutDashboard, Calendar, Bell, User, Home } from "lucide-react"
@@ -35,6 +37,7 @@ export function AppSidebar() {
       <SidebarContent>
         {/* Upper section for Dashboard, Events, and Notifications */}
         <SidebarGroup>
+        <SidebarGroupLabel>Application</SidebarGroupLabel>
           <SidebarGroupContent>
             <SidebarMenu>
               {mainItems.map((item) => ( 
@@ -55,9 +58,11 @@ export function AppSidebar() {
             </SidebarMenu>
           </SidebarGroupContent>
         </SidebarGroup>
-
-        {/* Lower section for Profile and Home */}
-        <SidebarGroup className="mt-auto">
+      </SidebarContent>
+      
+      {/* Footer section for Profile and Home */}
+      <SidebarFooter>
+        <SidebarGroup>
           <SidebarGroupContent>
             <SidebarMenu>
               {lowerItems.map((item) => (
@@ -73,9 +78,9 @@ export function AppSidebar() {
             </SidebarMenu>
           </SidebarGroupContent>
         </SidebarGroup>
-
-
-      </SidebarContent>
+      
+      
+      </SidebarFooter>
       <SidebarRail />
     </Sidebar>
   )
