@@ -20,9 +20,9 @@ export default function AppLayout() {
                 {/* Top Bar: This contains the toggle button 
                    and your existing Header component 
                 */}
-                <header className="flex h-16 shrink-0 items-center gap-2 px-4">
+                {/* <header className="flex h-16 shrink-0 items-center gap-2 px-4"> */}
                     <SidebarTrigger className="-ml-1" />
-                </header>
+                {/* </header> */}
 
                 {/* Main Content Area: This is where your pages 
                    (Dashboard, Events, etc.) will render 
