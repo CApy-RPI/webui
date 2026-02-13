@@ -60,6 +60,20 @@ const Login = () => {
                         <img src="https://www.google.com/favicon.ico" alt="Google" style={{ width: '20px', height: '20px' }} />
                         Continue with Google
                     </button>
+                    <button
+                        onClick={login}
+                        className="primary-button"
+                        style={{
+                            padding: '1rem',
+                            fontSize: '1.1rem',
+                            width: '100%',
+                            display: 'flex',
+                            gap: '1rem'
+                        }}
+                    >
+                        <img src="https://www.google.com/favicon.ico" alt="Google" style={{ width: '20px', height: '20px' }} />
+                        Continue with Microsoft
+                    </button>
 
                     <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', color: 'var(--text-secondary)', fontSize: '0.9rem' }}>
                         <div style={{ flex: 1, height: '1px', background: 'var(--border-color)' }}></div>
