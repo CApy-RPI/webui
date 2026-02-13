@@ -1,81 +1,81 @@
 name: CI Pipeline
 
 on:
-  push:
-    branches: [main]
-  pull_request:
-    branches: [main]
+    push:
+        branches: [main]
+    pull_request:
+        branches: [main]
 
 jobs:
-  stylelint:
-    name: Stylelint
-    runs-on: ubuntu-latest
+    stylelint:
+        name: Stylelint
+        runs-on: ubuntu-latest
 
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
+        steps:
+            - name: Checkout code
+              uses: actions/checkout@v4
 
-      - name: Setup Node
-        uses: actions/setup-node@v4
-        with:
-          node-version: '22'
-          cache: 'npm'
-          cache-dependency-path: package-lock.json
+            - name: Setup Node
+              uses: actions/setup-node@v4
+              with:
+                  node-version: '22'
+                  cache: 'npm'
+                  cache-dependency-path: package-lock.json
 
-      - name: Install dependencies
-        run: npm ci
+            - name: Install dependencies
+              run: npm ci
 
-      - name: Run Stylelint
-        run: npx stylelint "**/*.css"
+            - name: Run Stylelint
+              run: npx stylelint "**/*.css"
 
-      - name: Build Web UI
-        run: npm run build
+            - name: Build Web UI
+              run: npm run build
 
-  prettier:
-    name: Prettier
-    runs-on: ubuntu-latest
+    prettier:
+        name: Prettier
+        runs-on: ubuntu-latest
 
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
+        steps:
+            - name: Checkout code
+              uses: actions/checkout@v4
 
-      - name: Setup Node
-        uses: actions/setup-node@v4
-        with:
-          node-version: '22'
-          cache: 'npm'
-          cache-dependency-path: frontend/package-lock.json
+            - name: Setup Node
+              uses: actions/setup-node@v4
+              with:
+                  node-version: '22'
+                  cache: 'npm'
+                  cache-dependency-path: package-lock.json
 
-      - name: Install dependencies
-        run: npm ci
+            - name: Install dependencies
+              run: npm ci
 
-      - name: Run Prettier
-        run: npx prettier --check "."
+            - name: Run Prettier
+              run: npx prettier --check "."
 
-      - name: Build Web UI
-        run: npm run build
+            - name: Build Web UI
+              run: npm run build
 
-  eslint:
-    name: ESLint
-    runs-on: ubuntu-latest
+    eslint:
+        name: ESLint
+        runs-on: ubuntu-latest
 
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
+        steps:
+            - name: Checkout code
+              uses: actions/checkout@v4
 
-      - name: Setup Node
-        uses: actions/setup-node@v4
-        with:
-          node-version: '22'
-          cache: 'npm'
-          cache-dependency-path: frontend/package-lock.json
+            - name: Setup Node
+              uses: actions/setup-node@v4
+              with:
+                  node-version: '22'
+                  cache: 'npm'
+                  cache-dependency-path: package-lock.json
 
-      - name: Install dependencies
-        run: npm ci
+            - name: Install dependencies
+              run: npm ci
 
-      - name: Run TypeScript & CSS lint (check only)
-        run: npx eslint .
-        working-directory:
+            - name: Run ESLint
+              run: npx eslint .
+              working-directory:
 
-      - name: Build Web UI
-        run: npm run build
+            - name: Build Web UI
+              run: npm run build

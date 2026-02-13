@@ -1,5 +1,8 @@
 # CAPY WEB UI
 
+[![Continuous Integration (CI)](https://github.com/CApy-RPI/webui/actions/workflows/main.yml/badge.svg)](https://github.com/CApy-RPI/webui/actions/workflows/main.yml)
+
+
 User management, analytics, event planning, and more!
 
 ## File Structure
