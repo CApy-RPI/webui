@@ -9,25 +9,29 @@ import Roster from './pages/Roster.tsx';
 import Notifications from './pages/Notifications.tsx';
 import Profile from './pages/Profile.tsx';
 import Settings from './pages/Settings.tsx';
+/*@ts-ignore*/
+import { AuthProvider } from './context/AuthContext'
 
 function App() {
     return (
         <>
-            <BrowserRouter>
-                <Routes>
-                    <Route path="/" element={<Home />} />
-                    <Route path="/register" element={<Register />} />
-                    <Route element={<AppLayout />}>
-                        <Route path="/dashboard" element={<Dashboard />} />
-                        <Route path="/events" element={<Events />} />
-                        <Route path="/calendar" element={<Calendar />} />
-                        <Route path="/roster" element={<Roster />} />
-                        <Route path="/notifications" element={<Notifications />} />
-                        <Route path="/profile" element={<Profile />} />
-                        <Route path="/settings" element={<Settings />} />
-                    </Route>
-                </Routes>
-            </BrowserRouter>
+            <AuthProvider>
+                <BrowserRouter>
+                    <Routes>
+                        <Route path="/" element={<Home />} />
+                        <Route path="/register" element={<Register />} />
+                        <Route element={<AppLayout />}>
+                            <Route path="/dashboard" element={<Dashboard />} />
+                            <Route path="/events" element={<Events />} />
+                            <Route path="/calendar" element={<Calendar />} />
+                            <Route path="/roster" element={<Roster />} />
+                            <Route path="/notifications" element={<Notifications />} />
+                            <Route path="/profile" element={<Profile />} />
+                            <Route path="/settings" element={<Settings />} />
+                        </Route>
+                    </Routes>
+                </BrowserRouter>
+            </AuthProvider>
         </>
     );
 }
