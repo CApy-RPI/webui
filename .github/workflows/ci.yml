@@ -73,7 +73,7 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Run TypeScript & CSS lint (check only)
+      - name: Run ESLint
         run: npx eslint .
         working-directory:
 
