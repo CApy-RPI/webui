@@ -1,13 +1,66 @@
-/* All of the Web UI's color variables in one place */
+/* colors.css: All of the Web UI's color variables in one place */
+
+/*
+
+PURPOSE: Consistent, easily modifiable color variables 
+abstracted to a single file.
+
+HOW TO USE: All variables in the CAPY COLOR SUITE should be treated 
+as constants. These constants should NOT be found in other CSS files. 
+Instead, create variables in the COLOR VARIABLES section, and use those. 
+COLOR VARIABLES should be duplicated and properly adjusted in the dark 
+mode section as well.
+
+*/
 
 :root {
+    /* GLOBAL STYLES ============================ */
     --site-transition: 0.25s;
-    --site-bg: #f5f5f5;
-    --header-bg: #fff;
-    --sidebar-bg: #fff;
-    --sidebar-link-hover-bg: #f4f4f4;
-    --sidebar-active-link-bg: #e4e4e4;
-    --standard-white: #fff;
-    --standard-black: #000;
-    --standard-text: #1c1c1c;
+    --site-font: 'Asap', sans-serif;
+
+    /* ========================================== */
+
+    /* CAPY COLOR SUITE ========================= */
+
+    /* All colors used on the site are found here */
+    --primary-light: #339b92;
+    --primary: #007a75;
+    --primary-dark: #00464d;
+    --primary-extra-dark: #002633;
+    --accent: #f1602f;
+    --off-white: #f9fafa;
+    --highlight: #f4f8f6;
+    --off-black: #20201f;
+
+    /* ========================================== */
+
+    /* COLOR VARIABLES ========================== */
+
+    /* Global Styles: backgrounds, text */
+    --site-bg: var(--off-white);
+    --standard-white: var(--off-white);
+    --standard-black: var(--off-black);
+    --standard-text: var(--primary);
+
+    /* Sidebar / Header */
+    --header-bg: var(--highlight);
+    --sidebar-bg: var(--highlight);
+    --sidebar-link-hover-bg: var(--off-white);
+    --sidebar-active-link-bg: var(--primary-light);
+}
+
+[data-theme='dark'] {
+    /* COLOR VARIABLES ========================== */
+
+    /* Global Styles: backgrounds, text */
+    --site-bg: var(--off-black);
+    --standard-white: var(--off-black);
+    --standard-black: var(--off-white);
+    --standard-text: var(--primary);
+
+    /* Sidebar / Header */
+    --header-bg: var(--primary-extra-dark);
+    --sidebar-bg: var(--primary-extra-dark);
+    --sidebar-link-hover-bg: var(--accent);
+    --sidebar-active-link-bg: var(--accent);
 }
