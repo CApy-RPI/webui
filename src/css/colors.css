@@ -42,8 +42,7 @@ mode section as well.
     --standard-black: var(--off-black);
     --standard-text: var(--primary);
 
-    /* Sidebar / Header */
-    --header-bg: var(--highlight);
+    /* Sidebar */
     --sidebar-bg: var(--highlight);
     --sidebar-link-hover-bg: var(--off-white);
     --sidebar-active-link-bg: var(--primary-light);
@@ -56,10 +55,9 @@ mode section as well.
     --site-bg: var(--off-black);
     --standard-white: var(--off-black);
     --standard-black: var(--off-white);
-    --standard-text: var(--primary);
+    --standard-text: var(--off-white);
 
-    /* Sidebar / Header */
-    --header-bg: var(--primary-extra-dark);
+    /* Sidebar */
     --sidebar-bg: var(--primary-extra-dark);
     --sidebar-link-hover-bg: var(--accent);
     --sidebar-active-link-bg: var(--accent);

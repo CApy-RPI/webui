@@ -1,6 +1,6 @@
 import { useTheme } from '../contexts/ThemeContext';
 
-export function DarkModeToggle() {
+export default function DarkModeToggle() {
     const { theme, toggleTheme } = useTheme();
 
     return (
