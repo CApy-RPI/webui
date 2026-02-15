@@ -34,9 +34,13 @@ export default function Sidebar({ collapsed, onToggle }: SidebarProps) {
             </div>
             <SidebarWorkspace workspace="Overview">
                 <SidebarLink label="Dashboard" icon={<HomeIcon />} nav="/dashboard" />
-                <SidebarGroup label="Events" icon={<StarIcon/>} collapsed={collapsed}>
+                <SidebarGroup label="Events" icon={<StarIcon />} collapsed={collapsed}>
                     <SidebarLink label="Create" icon={<PlusIcon />} nav="/events/create" />
-                    <SidebarLink label="History" icon={<ClipboardDocumentCheckIcon />} nav="/events/history" />
+                    <SidebarLink
+                        label="History"
+                        icon={<ClipboardDocumentCheckIcon />}
+                        nav="/events/history"
+                    />
                 </SidebarGroup>
                 <SidebarLink label="Calendar" icon={<CalendarDaysIcon />} nav="/calendar" />
                 <SidebarLink label="Roster" icon={<UserGroupIcon />} nav="/roster" />
@@ -45,7 +49,11 @@ export default function Sidebar({ collapsed, onToggle }: SidebarProps) {
             <SidebarWorkspace>
                 <SidebarLink label="Help Center" icon={<QuestionMarkCircleIcon />} nav="/help" />
                 <SidebarLink label="Settings" icon={<Cog8ToothIcon />} nav="/settings" />
-                <SidebarProfile icon={<UserCircleIcon />} name="Kevin Smith" email="smithk@rpi.edu"/>
+                <SidebarProfile
+                    icon={<UserCircleIcon />}
+                    name="Kevin Smith"
+                    email="smithk@rpi.edu"
+                />
             </SidebarWorkspace>
         </div>
     );

@@ -6,7 +6,7 @@ type SidebarLinkProps = {
     nav: string;
 };
 
-export default function SidebarLink({ label, icon, nav}: SidebarLinkProps) {
+export default function SidebarLink({ label, icon, nav }: SidebarLinkProps) {
     return (
         <NavLink
             to={nav}

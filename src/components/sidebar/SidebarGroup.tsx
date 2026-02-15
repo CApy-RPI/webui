@@ -15,6 +15,7 @@ export default function SidebarGroup({ label, icon, children, collapsed }: Sideb
     // This logic assumes the user wants groups back open when sidebar is toggled.
     useEffect(() => {
         if (collapsed) {
+            // eslint-disable-next-line react-hooks/set-state-in-effect
             setOpen(false);
         } else {
             setOpen(true);
@@ -28,11 +29,7 @@ export default function SidebarGroup({ label, icon, children, collapsed }: Sideb
                 <span className="sidebar-link-label sidebar-label-transition">{label}</span>
                 <Icon className="group-collapse-icon sidebar-label-transition" />
             </div>
-            {open && (
-            <div className="sidebar-group-children">
-                {children}
-            </div>
-            )}
+            {open && <div className="sidebar-group-children">{children}</div>}
         </div>
     );
 }
