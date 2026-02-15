@@ -15,19 +15,20 @@
 .header-title {
     margin: 0;
     flex-grow: 1;
+    font-weight: 500;
 }
 
 .header-right-btns {
     display: flex;
     flex-direction: row;
     gap: 1.75rem;
+    align-items: center;
 }
 
 .profile-btn,
 .register-btn {
     cursor: pointer;
     font-size: 1.25rem;
-    font-weight: bold;
     padding: 0.35rem 1rem;
     border-radius: 0.7rem;
     display: flex;
