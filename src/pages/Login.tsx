@@ -6,9 +6,6 @@ import { Shield, Sparkles } from 'lucide-react';
 const Login = () => {
     const { user, login } = useAuth();
     const location = useLocation();
-
-    // If the user is already authenticated, redirect them to the dashboard
-    // or to the page they were trying to access before being redirected to login
     const from = location.state?.from?.pathname || "/becapy";
 
     if (user) {
