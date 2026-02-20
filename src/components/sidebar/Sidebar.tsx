@@ -1,10 +1,10 @@
 import '../../css/sidebar.css';
+import '../../css/login.css';
 import SidebarGroup from './SidebarGroup.tsx';
 import SidebarLink from './SidebarLink.tsx';
-import { useNavigate } from 'react-router-dom';
+//import { type useNavigate } from 'react-router-dom';
 import { useState } from 'react';
-/*@ts-ignore*/
-import LoginPopup from '../components/LoginPopup';
+import LoginPopup from "../LoginPopup.tsx";
 import SidebarProfile from './SidebarProfile.tsx';
 import SidebarWorkspace from './SidebarWorkspace.tsx';
 
@@ -51,6 +51,10 @@ export default function Sidebar({ collapsed, onToggle }: SidebarProps) {
                     <SidebarLink label="Settings" icon={<Cog8ToothIcon />} nav="/settings" />
                 </div>
                 <a className="register-btn" onClick={() => setShowLogin(true)}> Register </a>
+                <LoginPopup
+                    isOpen={showLogin}
+                    onClose={() => setShowLogin(false)}
+                 />
                 <SidebarWorkspace workspace="Overview">
                 <SidebarLink label="Dashboard" icon={<HomeIcon />} nav="/dashboard" />
                 <SidebarGroup label="Events" icon={<StarIcon />} collapsed={collapsed}>
@@ -75,10 +79,7 @@ export default function Sidebar({ collapsed, onToggle }: SidebarProps) {
                 />
             </SidebarWorkspace>
         </div>
-            <LoginPopup
-                isOpen={showLogin}
-                onClose={() => setShowLogin(false)}
-            />
+            
         </>
             
     );
