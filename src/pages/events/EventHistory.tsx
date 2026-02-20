@@ -1,8 +1,8 @@
-export default function Events() {
+export default function EventHistory() {
     return (
         <>
             <div>
-                <h1>My Events</h1>
+                <h1>Event History</h1>
             </div>
         </>
     );
