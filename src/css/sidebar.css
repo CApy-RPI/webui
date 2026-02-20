@@ -203,3 +203,7 @@
     max-width: 0;
     opacity: 0;
 }
+
+.register-btn {
+    color: black;
+}
