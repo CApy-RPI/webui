@@ -48,14 +48,14 @@ export default function LoginPopup({ isOpen, onClose }: Props) {
 
                 <button
                     className="popup-button"
-                    onClick={login}
+                    onClick={() => login("google")}
                 >
                     Continue with Google
                 </button>
 
                 <button
                     className="popup-button"
-                    onClick={login}
+                    onClick={() => login("microsoft")}
                 >
                     Continue with Microsoft
                 </button>

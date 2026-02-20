@@ -10,7 +10,7 @@ type AuthContextType = {
     user: User | null;
     loading: boolean;
     error: string | null;
-    login: () => void;
+    login: (provider: "google" | "microsoft") => void;
     logout: () => Promise<void>;
     refreshUser: () => Promise<void>;
 };
@@ -63,9 +63,14 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
         }
     };
 
-    const login = (): void => {
+    const login = (provider: "google" | "microsoft"): void => {
 
-        window.open('https://api.capyrpi.org/v1/auth/google', '_blank');
+        const url =
+            provider === "google"
+                ? "https://api.capyrpi.org/v1/auth/google"
+                : "https://api.capyrpi.org/v1/auth/microsoft";
+
+        window.open(url, "_blank");
 
         const pollInterval = setInterval(async () => {
 
@@ -93,7 +98,9 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
                 if (err instanceof Error) {
                     console.error('Polling failed:', err.message);
                 }
+
             }
+
         }, 3000);
 
         setTimeout(() => {
