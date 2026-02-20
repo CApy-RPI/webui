@@ -1,6 +1,6 @@
-import React, { useEffect } from "react";
-import { useAuth } from "../context/AuthContext";
-import "../css/login.css";
+import React, { useEffect } from 'react';
+import { useAuth } from '../context/AuthContext';
+import '../css/login.css';
 
 type Props = {
     isOpen: boolean;
@@ -8,7 +8,6 @@ type Props = {
 };
 
 export default function LoginPopup({ isOpen, onClose }: Props) {
-
     const { login, user } = useAuth();
 
     useEffect(() => {
@@ -29,39 +28,21 @@ export default function LoginPopup({ isOpen, onClose }: Props) {
 
     return (
         <div className="popup-overlay" onClick={handleOverlayClick}>
-
-            <div
-                className="popup-container"
-                onClick={handlePopupClick}
-            >
-
-                <button
-                    className="popup-close-x"
-                    onClick={onClose}
-                >
+            <div className="popup-container" onClick={handlePopupClick}>
+                <button className="popup-close-x" onClick={onClose}>
                     ×
                 </button>
 
-                <h2 className="popup-title">
-                    Register or Login
-                </h2>
+                <h2 className="popup-title">Register or Login</h2>
 
-                <button
-                    className="popup-button"
-                    onClick={() => login("google")}
-                >
+                <button className="popup-button" onClick={() => login('google')}>
                     Continue with Google
                 </button>
 
-                <button
-                    className="popup-button"
-                    onClick={() => login("microsoft")}
-                >
+                <button className="popup-button" onClick={() => login('microsoft')}>
                     Continue with Microsoft
                 </button>
-
             </div>
-
         </div>
     );
 }

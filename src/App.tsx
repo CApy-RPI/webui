@@ -10,8 +10,7 @@ import Roster from './pages/Roster.tsx';
 import Notifications from './pages/Notifications.tsx';
 import Profile from './pages/Profile.tsx';
 import Settings from './pages/Settings.tsx';
-/*@ts-ignore*/
-import { AuthProvider } from './context/AuthContext.tsx'
+import { AuthProvider } from './context/AuthContext.tsx';
 import HelpCenter from './pages/HelpCenter.tsx';
 
 function App() {

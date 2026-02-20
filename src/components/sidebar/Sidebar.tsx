@@ -4,7 +4,7 @@ import SidebarGroup from './SidebarGroup.tsx';
 import SidebarLink from './SidebarLink.tsx';
 //import { type useNavigate } from 'react-router-dom';
 import { useState } from 'react';
-import LoginPopup from "../LoginPopup.tsx";
+import LoginPopup from '../LoginPopup.tsx';
 import SidebarProfile from './SidebarProfile.tsx';
 import SidebarWorkspace from './SidebarWorkspace.tsx';
 
@@ -29,7 +29,7 @@ type SidebarProps = {
 
 export default function Sidebar({ collapsed, onToggle }: SidebarProps) {
     const [showLogin, setShowLogin] = useState(false);
-    
+
     return (
         <>
             <div className={`sidebar ${collapsed ? 'collapsed' : ''}`}>
@@ -44,43 +44,53 @@ export default function Sidebar({ collapsed, onToggle }: SidebarProps) {
                     <SidebarLink label="Events" icon={<StarIcon />} nav="/events" />
                     <SidebarLink label="Calendar" icon={<CalendarDaysIcon />} nav="/calendar" />
                     <SidebarLink label="Roster" icon={<UserGroupIcon />} nav="/roster" />
-                    <SidebarLink label="Notifications" icon={<BellAlertIcon />} nav="/notifications" />
+                    <SidebarLink
+                        label="Notifications"
+                        icon={<BellAlertIcon />}
+                        nav="/notifications"
+                    />
                 </div>
                 <div className="lower-sidebar-link-container">
                     <SidebarLink label="My Profile" icon={<UserCircleIcon />} nav="/profile" />
                     <SidebarLink label="Settings" icon={<Cog8ToothIcon />} nav="/settings" />
                 </div>
-                <a className="register-btn" onClick={() => setShowLogin(true)}> Register </a>
-                <LoginPopup
-                    isOpen={showLogin}
-                    onClose={() => setShowLogin(false)}
-                 />
+                <a className="register-btn" onClick={() => setShowLogin(true)}>
+                    {' '}
+                    Register{' '}
+                </a>
+                <LoginPopup isOpen={showLogin} onClose={() => setShowLogin(false)} />
                 <SidebarWorkspace workspace="Overview">
-                <SidebarLink label="Dashboard" icon={<HomeIcon />} nav="/dashboard" />
-                <SidebarGroup label="Events" icon={<StarIcon />} collapsed={collapsed}>
-                    <SidebarLink label="Create" icon={<PlusIcon />} nav="/events/create" />
+                    <SidebarLink label="Dashboard" icon={<HomeIcon />} nav="/dashboard" />
+                    <SidebarGroup label="Events" icon={<StarIcon />} collapsed={collapsed}>
+                        <SidebarLink label="Create" icon={<PlusIcon />} nav="/events/create" />
+                        <SidebarLink
+                            label="History"
+                            icon={<ClipboardDocumentCheckIcon />}
+                            nav="/events/history"
+                        />
+                    </SidebarGroup>
+                    <SidebarLink label="Calendar" icon={<CalendarDaysIcon />} nav="/calendar" />
+                    <SidebarLink label="Roster" icon={<UserGroupIcon />} nav="/roster" />
                     <SidebarLink
-                        label="History"
-                        icon={<ClipboardDocumentCheckIcon />}
-                        nav="/events/history"
+                        label="Notifications"
+                        icon={<BellAlertIcon />}
+                        nav="/notifications"
                     />
-                </SidebarGroup>
-                <SidebarLink label="Calendar" icon={<CalendarDaysIcon />} nav="/calendar" />
-                <SidebarLink label="Roster" icon={<UserGroupIcon />} nav="/roster" />
-                <SidebarLink label="Notifications" icon={<BellAlertIcon />} nav="/notifications" />
-            </SidebarWorkspace>
-            <SidebarWorkspace>
-                <SidebarLink label="Help Center" icon={<QuestionMarkCircleIcon />} nav="/help" />
-                <SidebarLink label="Settings" icon={<Cog8ToothIcon />} nav="/settings" />
-                <SidebarProfile
-                    icon={<UserCircleIcon />}
-                    name="Kevin Smith"
-                    email="smithk@rpi.edu"
-                />
-            </SidebarWorkspace>
-        </div>
-            
+                </SidebarWorkspace>
+                <SidebarWorkspace>
+                    <SidebarLink
+                        label="Help Center"
+                        icon={<QuestionMarkCircleIcon />}
+                        nav="/help"
+                    />
+                    <SidebarLink label="Settings" icon={<Cog8ToothIcon />} nav="/settings" />
+                    <SidebarProfile
+                        icon={<UserCircleIcon />}
+                        name="Kevin Smith"
+                        email="smithk@rpi.edu"
+                    />
+                </SidebarWorkspace>
+            </div>
         </>
-            
     );
 }
