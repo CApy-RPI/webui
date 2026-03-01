@@ -1,3 +1,11 @@
+/*
+
+*** NOT IN USE ***
+Groups links allowing for a nested structure 
+on the Sidebar.
+
+*/
+
 import { ChevronRightIcon, ChevronDownIcon } from '@heroicons/react/24/solid';
 import { useState, useEffect } from 'react';
 

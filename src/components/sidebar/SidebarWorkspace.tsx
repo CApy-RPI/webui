@@ -1,3 +1,10 @@
+/*
+
+Currently only used as a standard div, but supports 
+a toggle for viewing links.
+
+*/
+
 import React from 'react';
 import { useState } from 'react';
 
