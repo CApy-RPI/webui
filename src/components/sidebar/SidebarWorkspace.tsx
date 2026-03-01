@@ -21,10 +21,7 @@ export default function SidebarWorkspace({ workspace, children }: SidebarWorkspa
 
     return (
         <div className={`sidebar-workspace`}>
-            <div
-                onClick={() => setOpen((prev) => !prev)}
-                className={`${workspace ? 'workspace-header' : 'hide'}`}
-            >
+            <div onClick={() => setOpen((prev) => !prev)} className={`${workspace ? 'workspace-header' : 'hide'}`}>
                 <Icon className="workspace-icon" />
                 <span className="workspace-text sidebar-label-transition">{workspace}</span>
             </div>

@@ -37,11 +37,7 @@ export default function Sidebar({ collapsed, onToggle }: SidebarProps) {
                     <SidebarLink label="[dev] Testing" icon={<AdjustmentsHorizontalIcon />} nav="/testing" />
                 </div>
                 <SidebarWorkspace>
-                    <SidebarProfile
-                        icon={<UserCircleIcon />}
-                        name="Kevin Smith"
-                        email="smithk@rpi.edu"
-                    />
+                    <SidebarProfile icon={<UserCircleIcon />} name="Kevin Smith" email="smithk@rpi.edu" />
                 </SidebarWorkspace>
             </div>
         </>

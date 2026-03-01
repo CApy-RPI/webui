@@ -104,13 +104,9 @@ const Login = () => {
                             fontSize: '0.9rem',
                         }}
                     >
-                        <div
-                            style={{ flex: 1, height: '1px', background: 'var(--border-color)' }}
-                        ></div>
+                        <div style={{ flex: 1, height: '1px', background: 'var(--border-color)' }}></div>
                         <span>SECURE ACCESS</span>
-                        <div
-                            style={{ flex: 1, height: '1px', background: 'var(--border-color)' }}
-                        ></div>
+                        <div style={{ flex: 1, height: '1px', background: 'var(--border-color)' }}></div>
                     </div>
                 </div>
 
