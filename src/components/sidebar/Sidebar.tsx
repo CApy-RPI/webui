@@ -5,6 +5,7 @@ import SidebarProfile from './SidebarProfile.tsx';
 import SidebarWorkspace from './SidebarWorkspace.tsx';
 
 import {
+    AdjustmentsHorizontalIcon,
     Bars3Icon,
     HomeIcon,
     StarIcon,
@@ -32,12 +33,8 @@ export default function Sidebar({ collapsed, onToggle }: SidebarProps) {
                     <SidebarLink label="Home" icon={<HomeIcon />} nav="/" />
                     <SidebarLink label="Events" icon={<StarIcon />} nav="/events" />
                     <SidebarLink label="Insights" icon={<CalendarDaysIcon />} nav="/insights" />
-                    <SidebarLink
-                        label="Organizations"
-                        icon={<UserGroupIcon />}
-                        nav="/organizations"
-                    />
-                    <SidebarLink label="[dev] Testing" icon={<UserGroupIcon />} nav="/testing" />
+                    <SidebarLink label="Organizations" icon={<UserGroupIcon />} nav="/organizations" />
+                    <SidebarLink label="[dev] Testing" icon={<AdjustmentsHorizontalIcon />} nav="/testing" />
                 </div>
                 <SidebarWorkspace>
                     <SidebarProfile
