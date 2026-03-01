@@ -1,8 +1,8 @@
-export default function CreateEvent() {
+export default function Events() {
     return (
         <>
             <div>
-                <h1>Create Event</h1>
+                <h1>My Events</h1>
             </div>
         </>
     );

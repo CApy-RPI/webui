@@ -1,5 +1,5 @@
 import { Navigate, useLocation } from 'react-router-dom';
-import { useAuth } from '../context/AuthContext';
+import { useAuth } from '../contexts/AuthContext';
 import { Shield, Sparkles } from 'lucide-react';
 
 const Login = () => {
@@ -104,13 +104,9 @@ const Login = () => {
                             fontSize: '0.9rem',
                         }}
                     >
-                        <div
-                            style={{ flex: 1, height: '1px', background: 'var(--border-color)' }}
-                        ></div>
+                        <div style={{ flex: 1, height: '1px', background: 'var(--border-color)' }}></div>
                         <span>SECURE ACCESS</span>
-                        <div
-                            style={{ flex: 1, height: '1px', background: 'var(--border-color)' }}
-                        ></div>
+                        <div style={{ flex: 1, height: '1px', background: 'var(--border-color)' }}></div>
                     </div>
                 </div>
 

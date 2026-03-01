@@ -1,13 +1,8 @@
-import { useNavigate } from 'react-router-dom';
-
 export default function Home() {
-    const navigate = useNavigate();
-
     return (
         <>
-            <h1>CAPY</h1>
-            <div className="card">
-                <button onClick={() => navigate('/dashboard')}>Navigate to Dashboard</button>
+            <div>
+                <h1>My Dashboard</h1>
             </div>
         </>
     );

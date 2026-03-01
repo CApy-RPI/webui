@@ -31,11 +31,7 @@ export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ childre
         localStorage.setItem('site_mode', theme);
     }, [theme]);
 
-    return (
-        <ThemeContext.Provider value={{ theme, toggleTheme, setTheme }}>
-            {children}
-        </ThemeContext.Provider>
-    );
+    return <ThemeContext.Provider value={{ theme, toggleTheme, setTheme }}>{children}</ThemeContext.Provider>;
 };
 
 export const useTheme = (): ThemeContextType => {

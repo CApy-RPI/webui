@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { useAuth } from '../context/AuthContext';
+import { useAuth } from '../contexts/AuthContext';
 import '../css/login.css';
 
 type Props = {
