@@ -98,62 +98,62 @@ jobs:
                   push: false
                   tags: web-ui:test
 
-      cypress-dashboard:
-          name: Cypress: Dashboard
-          runs-on: ubuntu-latest
-          needs: docker-build
-          steps:
+    cypress-dashboard:
+        name: Cypress - Dashboard
+        runs-on: ubuntu-latest
+        needs: docker-build
+        steps:
             - uses: actions/checkout@v4
             - uses: cypress-io/github-action@v6
               with:
-                start: npm run build
-                wait-on: 'http://localhost:5173'
-                spec: cypress/e2e/dashboard/**/*.cy.ts
+                  start: npm run build
+                  wait-on: 'http://localhost:5173'
+                  spec: cypress/e2e/dashboard/**/*.cy.ts
 
-      cypress-events:
-          name: Cypress: Events
-          runs-on: ubuntu-latest
-          needs: docker-build
-          steps:
+    cypress-events:
+        name: Cypress - Events
+        runs-on: ubuntu-latest
+        needs: docker-build
+        steps:
             - uses: actions/checkout@v4
             - uses: cypress-io/github-action@v6
               with:
-                start: npm run build
-                wait-on: 'http://localhost:5173'
-                spec: cypress/e2e/dashboard/**/*.cy.ts
+                  start: npm run build
+                  wait-on: 'http://localhost:5173'
+                  spec: cypress/e2e/dashboard/**/*.cy.ts
 
-      cypress-insights:
-          name: Cypress: Insights
-          runs-on: ubuntu-latest
-          needs: docker-build
-          steps:
+    cypress-insights:
+        name: Cypress - Insights
+        runs-on: ubuntu-latest
+        needs: docker-build
+        steps:
             - uses: actions/checkout@v4
             - uses: cypress-io/github-action@v6
               with:
-                start: npm run build
-                wait-on: 'http://localhost:5173'
-                spec: cypress/e2e/dashboard/**/*.cy.ts
+                  start: npm run build
+                  wait-on: 'http://localhost:5173'
+                  spec: cypress/e2e/dashboard/**/*.cy.ts
 
-      cypress-organizations:
-          name: Cypress: Organizations
-          runs-on: ubuntu-latest
-          needs: docker-build
-          steps:
+    cypress-organizations:
+        name: Cypress - Organizations
+        runs-on: ubuntu-latest
+        needs: docker-build
+        steps:
             - uses: actions/checkout@v4
             - uses: cypress-io/github-action@v6
               with:
-                start: npm run build
-                wait-on: 'http://localhost:5173'
-                spec: cypress/e2e/dashboard/**/*.cy.ts
+                  start: npm run build
+                  wait-on: 'http://localhost:5173'
+                  spec: cypress/e2e/dashboard/**/*.cy.ts
 
-      cypress-user:
-          name: Cypress: User
-          runs-on: ubuntu-latest
-          needs: docker-build
-          steps:
+    cypress-user:
+        name: Cypress - User
+        runs-on: ubuntu-latest
+        needs: docker-build
+        steps:
             - uses: actions/checkout@v4
             - uses: cypress-io/github-action@v6
               with:
-                start: npm run build
-                wait-on: 'http://localhost:5173'
-                spec: cypress/e2e/dashboard/**/*.cy.ts
+                  start: npm run build
+                  wait-on: 'http://localhost:5173'
+                  spec: cypress/e2e/dashboard/**/*.cy.ts
