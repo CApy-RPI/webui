@@ -1,4 +1,4 @@
-name: CI Pipeline
+name: CI
 
 on:
     push:
@@ -97,3 +97,113 @@ jobs:
                   context: .
                   push: false
                   tags: web-ui:test
+
+    cypress-dashboard:
+        name: Cypress - Dashboard
+        runs-on: ubuntu-latest
+
+        steps:
+            - uses: actions/checkout@v4
+
+            - name: Install dependencies
+              run: npm ci
+
+            - name: Build Docker image
+              run: docker build -t web-ui:test .
+
+            - name: Start container
+              run: docker run -d --name webui -p 5173:80 web-ui:test
+
+            - name: Wait for app
+              run: npx wait-on http://localhost:5173
+
+            - name: Run Cypress
+              run: npx cypress run --spec "cypress/e2e/dashboard/**/*.cy.ts"
+
+    cypress-events:
+        name: Cypress - Events
+        runs-on: ubuntu-latest
+
+        steps:
+            - uses: actions/checkout@v4
+
+            - name: Install dependencies
+              run: npm ci
+
+            - name: Build Docker image
+              run: docker build -t web-ui:test .
+
+            - name: Start container
+              run: docker run -d --name webui -p 5173:80 web-ui:test
+
+            - name: Wait for app
+              run: npx wait-on http://localhost:5173
+
+            - name: Run Cypress
+              run: npx cypress run --spec "cypress/e2e/dashboard/**/*.cy.ts"
+
+    cypress-insights:
+        name: Cypress - Insights
+        runs-on: ubuntu-latest
+
+        steps:
+            - uses: actions/checkout@v4
+
+            - name: Install dependencies
+              run: npm ci
+
+            - name: Build Docker image
+              run: docker build -t web-ui:test .
+
+            - name: Start container
+              run: docker run -d --name webui -p 5173:80 web-ui:test
+
+            - name: Wait for app
+              run: npx wait-on http://localhost:5173
+
+            - name: Run Cypress
+              run: npx cypress run --spec "cypress/e2e/dashboard/**/*.cy.ts"
+
+    cypress-organizations:
+        name: Cypress - Organizations
+        runs-on: ubuntu-latest
+
+        steps:
+            - uses: actions/checkout@v4
+
+            - name: Install dependencies
+              run: npm ci
+
+            - name: Build Docker image
+              run: docker build -t web-ui:test .
+
+            - name: Start container
+              run: docker run -d --name webui -p 5173:80 web-ui:test
+
+            - name: Wait for app
+              run: npx wait-on http://localhost:5173
+
+            - name: Run Cypress
+              run: npx cypress run --spec "cypress/e2e/dashboard/**/*.cy.ts"
+
+    cypress-user:
+        name: Cypress - User
+        runs-on: ubuntu-latest
+
+        steps:
+            - uses: actions/checkout@v4
+
+            - name: Install dependencies
+              run: npm ci
+
+            - name: Build Docker image
+              run: docker build -t web-ui:test .
+
+            - name: Start container
+              run: docker run -d --name webui -p 5173:80 web-ui:test
+
+            - name: Wait for app
+              run: npx wait-on http://localhost:5173
+
+            - name: Run Cypress
+              run: npx cypress run --spec "cypress/e2e/dashboard/**/*.cy.ts"
