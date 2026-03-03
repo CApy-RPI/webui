@@ -5,16 +5,16 @@
 
 version: 2
 updates:
-  - package-ecosystem: "npm"
-    directory: "/"
-    schedule:
-      interval: "weekly"
-    commit-message:
-      prefix: "[Dependency]"
+    - package-ecosystem: 'npm'
+      directory: '/'
+      schedule:
+          interval: 'weekly'
+      commit-message:
+          prefix: '[Dependency]'
 
-  - package-ecosystem: "docker"
-    directory: "/"
-    schedule:
-      interval: "weekly"
-    commit-message:
-      prefix: "[Dependency]"
+    - package-ecosystem: 'docker'
+      directory: '/'
+      schedule:
+          interval: 'weekly'
+      commit-message:
+          prefix: '[Dependency]'
