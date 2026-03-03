@@ -113,7 +113,7 @@ jobs:
               run: docker build -t web-ui:test .
 
             - name: Start container
-              run: docker run -d -p 5173:80 web-ui:test
+              run: docker run -d --name webui -p 5173:80 web-ui:test
 
             - name: Wait for app
               run: npx wait-on http://localhost:5173
@@ -136,7 +136,7 @@ jobs:
               run: docker build -t web-ui:test .
 
             - name: Start container
-              run: docker run -d -p 5173:80 web-ui:test
+              run: docker run -d --name webui -p 5173:80 web-ui:test
 
             - name: Wait for app
               run: npx wait-on http://localhost:5173
@@ -159,7 +159,7 @@ jobs:
               run: docker build -t web-ui:test .
 
             - name: Start container
-              run: docker run -d -p 5173:80 web-ui:test
+              run: docker run -d --name webui -p 5173:80 web-ui:test
 
             - name: Wait for app
               run: npx wait-on http://localhost:5173
@@ -182,7 +182,7 @@ jobs:
               run: docker build -t web-ui:test .
 
             - name: Start container
-              run: docker run -d -p 5173:80 web-ui:test
+              run: docker run -d --name webui -p 5173:80 web-ui:test
 
             - name: Wait for app
               run: npx wait-on http://localhost:5173
@@ -205,7 +205,7 @@ jobs:
               run: docker build -t web-ui:test .
 
             - name: Start container
-              run: docker run -d -p 5173:80 web-ui:test
+              run: docker run -d --name webui -p 5173:80 web-ui:test
 
             - name: Wait for app
               run: npx wait-on http://localhost:5173
