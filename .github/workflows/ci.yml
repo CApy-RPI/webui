@@ -98,8 +98,8 @@ jobs:
                   push: false
                   tags: web-ui:test
 
-    cypress-dashboard:
-        name: Cypress - Dashboard
+    cypress-home:
+        name: Cypress - Home
         runs-on: ubuntu-latest
 
         steps:
@@ -118,7 +118,7 @@ jobs:
               run: npx wait-on http://localhost:5173
 
             - name: Run Cypress
-              run: npx cypress run --spec "cypress/e2e/dashboard/**/*.cy.ts"
+              run: npx cypress run --spec "cypress/e2e/home/**/*.cy.ts"
 
     cypress-events:
         name: Cypress - Events
@@ -140,29 +140,7 @@ jobs:
               run: npx wait-on http://localhost:5173
 
             - name: Run Cypress
-              run: npx cypress run --spec "cypress/e2e/dashboard/**/*.cy.ts"
-
-    cypress-insights:
-        name: Cypress - Insights
-        runs-on: ubuntu-latest
-
-        steps:
-            - uses: actions/checkout@v4
-
-            - name: Install dependencies
-              run: npm ci
-
-            - name: Build Docker image
-              run: docker build -t web-ui:test .
-
-            - name: Start container
-              run: docker run -d --name webui -p 5173:80 web-ui:test
-
-            - name: Wait for app
-              run: npx wait-on http://localhost:5173
-
-            - name: Run Cypress
-              run: npx cypress run --spec "cypress/e2e/dashboard/**/*.cy.ts"
+              run: npx cypress run --spec "cypress/e2e/events/**/*.cy.ts"
 
     cypress-organizations:
         name: Cypress - Organizations
@@ -184,10 +162,10 @@ jobs:
               run: npx wait-on http://localhost:5173
 
             - name: Run Cypress
-              run: npx cypress run --spec "cypress/e2e/dashboard/**/*.cy.ts"
+              run: npx cypress run --spec "cypress/e2e/organizations/**/*.cy.ts"
 
-    cypress-user:
-        name: Cypress - User
+    cypress-profile:
+        name: Cypress - Profile
         runs-on: ubuntu-latest
 
         steps:
@@ -206,4 +184,4 @@ jobs:
               run: npx wait-on http://localhost:5173
 
             - name: Run Cypress
-              run: npx cypress run --spec "cypress/e2e/dashboard/**/*.cy.ts"
+              run: npx cypress run --spec "cypress/e2e/profile/**/*.cy.ts"

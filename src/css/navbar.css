@@ -1,0 +1,39 @@
+.navbar {
+    position: relative;
+    display: inline-flex;
+    gap: 0.5rem;
+    background: #e6e6e6;
+    border-radius: 999px;
+    width: fit-content;
+    margin: 40px auto 0;
+}
+
+.navlink {
+    position: relative;
+    z-index: 2;
+    padding: 0.5rem 1rem;
+    border-radius: 999px;
+    text-decoration: none;
+    color: #444;
+}
+
+.navlink:hover {
+    background: rgb(0 0 0 / 5%);
+}
+
+.active-navlink {
+    color: #111;
+}
+
+.nav-indicator {
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    height: 100%;
+    border-radius: 999px;
+    background: #d0d0d0;
+    transition:
+        transform 0.28s cubic-bezier(0.4, 0, 0.2, 1),
+        width 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: transform, width;
+}
