@@ -1,7 +1,7 @@
-describe('Dashboard Page', () => {
+describe('Home Page', () => {
     it('displays the correct main title', () => {
         cy.visit('localhost:5173');
 
-        cy.get('h1').should('contain', 'My Dashboard');
+        cy.get('h1').should('contain', 'Home');
     });
 });
