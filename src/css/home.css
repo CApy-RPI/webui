@@ -1,0 +1,13 @@
+.home-grid {
+    display: grid;
+    width: 50rem;
+    grid-template-columns: 24rem 24rem;
+    gap: 2rem;
+}
+
+.home-grid-panel {
+    height: 20rem;
+    background: #e8e8e8;
+    border-radius: 3rem;
+    padding: 2rem;
+}

@@ -1,6 +1,4 @@
-import { useState } from 'react';
 import DarkModeToggle from '../components/DarkModeToggle.tsx';
-import LoginPopup from '../components/LoginPopup.tsx';
 
 export default function Testing() {
     return (
