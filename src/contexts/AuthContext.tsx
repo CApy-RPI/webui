@@ -35,7 +35,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
 
             const response = await fetch('https://api.capyrpi.org/v1/auth/me', {
                 headers: { Accept: 'application/json' },
-                credentials: 'include'
+                credentials: 'include',
             });
 
             if (response.ok) {
@@ -71,7 +71,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
             try {
                 const response = await fetch('https://api.capyrpi.org/v1/auth/me', {
                     headers: { Accept: 'application/json' },
-                    credentials: 'include'
+                    credentials: 'include',
                 });
 
                 if (response.ok) {
