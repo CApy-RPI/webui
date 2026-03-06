@@ -1,8 +1,6 @@
-/* Layout that each page will follow */
 import '../css/app-layout.css';
 import { Outlet } from 'react-router-dom';
-
-import Navbar from './navbar/Navbar.tsx';
+import Navbar from './navbar/Navbar';
 
 export default function AppLayout() {
     return (
