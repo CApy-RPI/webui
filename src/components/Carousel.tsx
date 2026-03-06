@@ -8,21 +8,23 @@ type CarouselProps = {
 export default function Carousel({ type }: CarouselProps) {
     return (
         <>
-            <div>
-                <h2 className="carousel-title">{type}</h2>
-                <div className="carousel">
-                    <Organization
-                        title="Math Club"
-                        desc="The RPI Math Faculty approved and Union affiliated math club!"
-                    />
-                    <Organization
-                        title="Math Club"
-                        desc="The RPI Math Faculty approved and Union affiliated math club!"
-                    />
-                    <Organization
-                        title="Math Club"
-                        desc="The RPI Math Faculty approved and Union affiliated math club!"
-                    />
+            <div className="carousel-container">
+                <div>
+                    <span className="carousel-title">{type}</span>
+                    <div className="carousel">
+                        <Organization
+                            title="Math Club"
+                            desc="The RPI Math Faculty approved and Union affiliated math club!"
+                        />
+                        <Organization
+                            title="Math Club"
+                            desc="The RPI Math Faculty approved and Union affiliated math club!"
+                        />
+                        <Organization
+                            title="Math Club"
+                            desc="The RPI Math Faculty approved and Union affiliated math club!"
+                        />
+                    </div>
                 </div>
             </div>
         </>
