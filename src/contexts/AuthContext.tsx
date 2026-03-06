@@ -35,6 +35,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
                 headers: {
                     Accept: 'application/json',
                 },
+                credentials: 'include',
             });
 
             if (response.ok) {
