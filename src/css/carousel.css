@@ -1,0 +1,24 @@
+.carousel-page-container {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+}
+
+.carousel {
+    width: 100%;
+    background: var(--carousel-bg);
+    height: 18rem;
+    border-radius: 2rem;
+    padding: 1rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 2rem;
+}
+
+.carousel-title {
+    margin: 0;
+    font-size: 1rem;
+    color: var(--standard-bw-text);
+    font-weight: 600;
+}

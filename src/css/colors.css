@@ -8,8 +8,8 @@ abstracted to a single file.
 HOW TO USE: All variables in the CAPY COLOR SUITE should be treated 
 as constants. These constants should NOT be found in other CSS files. 
 Instead, create variables in the COLOR VARIABLES section, and use those. 
-COLOR VARIABLES should be duplicated and properly adjusted in the dark 
-mode section as well.
+COLOR VARIABLES should be duplicated and adjusted in the dark mode 
+section as well.
 
 */
 
@@ -17,8 +17,6 @@ mode section as well.
     /* GLOBAL STYLES ============================ */
     --site-transition: 0.25s;
     --site-font: 'Asap', sans-serif;
-
-    /* ========================================== */
 
     /* CAPY COLOR SUITE ========================= */
 
@@ -32,7 +30,7 @@ mode section as well.
     --highlight: #f4f8f6;
     --off-black: #20201f;
 
-    /* ========================================== */
+    /* MISC DEV VARIABLES ======================= */
 
     /* COLOR VARIABLES ========================== */
 
@@ -41,11 +39,22 @@ mode section as well.
     --standard-white: var(--off-white);
     --standard-black: var(--off-black);
     --standard-text: var(--primary);
+    --standard-bw-text: var(--off-black);
 
-    /* Sidebar */
-    --sidebar-bg: var(--highlight);
-    --sidebar-link-hover-bg: var(--off-white);
-    --sidebar-active-link-bg: var(--primary-light);
+    /* Navbar */
+    --nav-bg: #e6e6e6;
+    --navlink-hover-bg: rgb(0 0 0 / 5%);
+    --navlink-color: #444;
+    --nav-indicator-bg: #d0d0d0;
+
+    /* Carousel */
+    --carousel-bg: #f2dede;
+
+    /* Organizations */
+    --org-bg: #d9d9d9;
+    --img-placeholder-bg: #b3807d;
+    --general-org-btn-bg: #b3807d;
+    --manage-org-btn-bg: #97bdc6;
 }
 
 [data-theme='dark'] {
@@ -56,9 +65,9 @@ mode section as well.
     --standard-white: var(--off-black);
     --standard-black: var(--off-white);
     --standard-text: var(--off-white);
+    --standard-bw-text: var(--off-white);
 
-    /* Sidebar */
-    --sidebar-bg: var(--primary-extra-dark);
-    --sidebar-link-hover-bg: var(--accent);
-    --sidebar-active-link-bg: var(--accent);
+    /* Navbar */
+
+    /* Carousel */
 }

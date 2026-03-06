@@ -1,8 +1,11 @@
+import Carousel from '../components/Carousel.tsx';
+
 export default function Organizations() {
     return (
         <>
-            <div>
-                <h1>Organizations</h1>
+            <div className={`carousel-page-container`}>
+                <Carousel type="my orgs" />
+                <Carousel type="recommended" />
             </div>
         </>
     );

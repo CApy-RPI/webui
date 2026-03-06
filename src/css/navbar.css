@@ -2,10 +2,10 @@
     position: relative;
     display: inline-flex;
     gap: 0.5rem;
-    background: #e6e6e6;
+    background: var(--nav-bg);
     border-radius: 999px;
     width: fit-content;
-    margin: 40px auto 0;
+    margin: 6rem auto 0;
 }
 
 .navlink {
@@ -14,15 +14,15 @@
     padding: 0.5rem 1rem;
     border-radius: 999px;
     text-decoration: none;
-    color: #444;
+    color: var(--navlink-color);
 }
 
 .navlink:hover {
-    background: rgb(0 0 0 / 5%);
+    background: var(--navlink-hover-bg);
 }
 
 .active-navlink {
-    color: #111;
+    color: var(--standard-bw-text);
 }
 
 .nav-indicator {
@@ -31,7 +31,7 @@
     left: 0;
     height: 100%;
     border-radius: 999px;
-    background: #d0d0d0;
+    background: var(--nav-indicator-bg);
     transition:
         transform 0.28s cubic-bezier(0.4, 0, 0.2, 1),
         width 0.28s cubic-bezier(0.4, 0, 0.2, 1);

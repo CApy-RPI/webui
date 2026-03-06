@@ -52,9 +52,9 @@ export default function Navbar() {
                     width: `${indicator.width}px`,
                 }}
             />
-            <NavbarLink label="profile" nav="/" />
-            <NavbarLink label="home" nav="/events" />
-            <NavbarLink label="events" nav="/insights" />
+            <NavbarLink label="profile" nav="/profile" />
+            <NavbarLink label="home" nav="/" />
+            <NavbarLink label="events" nav="/events" />
             <NavbarLink label="orgs" nav="/organizations" />
             <NavbarLink label="test" nav="/testing" />
         </div>
