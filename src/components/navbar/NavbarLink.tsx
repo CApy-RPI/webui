@@ -10,6 +10,10 @@ export default function NavbarLink({ label, nav }: NavbarLinkProps) {
     const navigate = useNavigate();
 
     const handleClick = (e: MouseEvent<HTMLAnchorElement>) => {
+        if (location.pathname === nav) {
+            return;
+        }
+
         e.preventDefault();
 
         const content = document.querySelector('.app-content');
