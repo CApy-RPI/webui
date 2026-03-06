@@ -11,19 +11,17 @@ export default function Home() {
         <>
             <div className="home-grid">
                 <div className="home-grid-panel">
-                    <a className="register-btn" onClick={() => setShowLogin(true)}>Register</a>
+                    <a className="register-btn" onClick={() => setShowLogin(true)}>
+                        Register
+                    </a>
                     <LoginPopup isOpen={showLogin} onClose={() => setShowLogin(false)} />
-                    <p style={{color:"black"}}>UserId: <span style={{ color: user?.id ? "green" : "red" }}>{user?.id ?? "Not logged in"}</span></p>
+                    <p style={{ color: 'black' }}>
+                        UserId: <span style={{ color: user?.id ? 'green' : 'red' }}>{user?.id ?? 'Not logged in'}</span>
+                    </p>
                 </div>
-                <div className="home-grid-panel">
-
-                </div>
-                <div className="home-grid-panel">
-
-                </div>
-                <div className="home-grid-panel">
-
-                </div>
+                <div className="home-grid-panel"></div>
+                <div className="home-grid-panel"></div>
+                <div className="home-grid-panel"></div>
             </div>
         </>
     );

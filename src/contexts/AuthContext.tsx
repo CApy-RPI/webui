@@ -35,30 +35,26 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
                 headers: {
                     Accept: 'application/json',
                 },
-                credentials: "include"
+                credentials: 'include',
             });
 
             if (response.ok) {
                 const data: User = await response.json();
                 setUser(data);
-            }
-            else {
+            } else {
                 setUser(null);
             }
-        }
-        catch (err: unknown) {
+        } catch (err: unknown) {
             if (err instanceof Error) {
                 console.error('Failed to fetch user:', err);
                 setError(err.message);
-            }
-            else {
+            } else {
                 console.error('Unknown error:', err);
                 setError('Unknown error');
             }
 
             setUser(null);
-        }
-        finally {
+        } finally {
             setLoading(false);
         }
     };
@@ -84,8 +80,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
                     setUser(data);
                     clearInterval(pollInterval);
                 }
-            }
-            catch (err: unknown) {
+            } catch (err: unknown) {
                 if (err instanceof Error) {
                     console.error('Polling failed:', err.message);
                 }
@@ -105,8 +100,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
             setUser(null);
 
             window.location.href = '/app/';
-        }
-        catch (err: unknown) {
+        } catch (err: unknown) {
             if (err instanceof Error) {
                 console.error('Logout failed:', err.message);
             }
