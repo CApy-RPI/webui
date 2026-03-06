@@ -6,8 +6,8 @@
 
 .carousel {
     width: 100%;
-    background: #F1DEDE;
-    height: 20rem;
+    background: var(--carousel-bg);
+    height: 18rem;
     border-radius: 2rem;
     padding: 1rem;
 
@@ -20,5 +20,6 @@
 .carousel-title {
     margin: 0;
     font-size: 1rem;
-    color: black;
+    color: var(--standard-bw-text);
+    font-weight: 600;
 }

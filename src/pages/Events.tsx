@@ -1,8 +1,11 @@
+import Carousel from '../components/Carousel.tsx';
+
 export default function Events() {
     return (
         <>
-            <div>
-                <h1>Events</h1>
+            <div className={`carousel-page-container`}>
+                <Carousel type="my events"/>
+                <Carousel type="recommended"/>
             </div>
         </>
     );

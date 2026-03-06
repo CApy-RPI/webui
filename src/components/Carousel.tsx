@@ -11,9 +11,9 @@ export default function Carousel({ type }: CarouselProps) {
             <div>
                 <h2 className="carousel-title">{type}</h2>
                 <div className="carousel">
-                    <Organization />
-                    <Organization />
-                    <Organization />
+                    <Organization title="Math Club" desc="The RPI Math Faculty approved and Union affiliated math club!"/>
+                    <Organization title="Math Club" desc="The RPI Math Faculty approved and Union affiliated math club!"/>
+                    <Organization title="Math Club" desc="The RPI Math Faculty approved and Union affiliated math club!"/>
                 </div>  
             </div>
         </>
