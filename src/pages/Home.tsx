@@ -16,7 +16,7 @@ export default function Home() {
                     </a>
                     <LoginPopup isOpen={showLogin} onClose={() => setShowLogin(false)} />
                     <p style={{ color: 'black' }}>
-                        UserId: <span style={{ color: user?.id ? 'green' : 'red' }}>{user?.id ?? 'Not logged in'}</span>
+                        UserId: <span style={{ color: user?.uid ? 'green' : 'red' }}>{user?.uid ?? 'Not logged in'}</span>
                     </p>
                 </div>
                 <div className="home-grid-panel"></div>

@@ -2,9 +2,11 @@
 import React, { createContext, useContext, useState, type ReactNode } from 'react';
 
 type User = {
-    id?: string;
-    name?: string;
+    uid?: string;
     email?: string;
+    first_name?: string;
+    last_name?: string;
+    role?: string;
 };
 
 type AuthContextType = {
@@ -32,10 +34,8 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
             setLoading(true);
 
             const response = await fetch('https://api.capyrpi.org/v1/auth/me', {
-                headers: {
-                    Accept: 'application/json',
-                },
-                credentials: 'include',
+                headers: { Accept: 'application/json' },
+                credentials: 'include'
             });
 
             if (response.ok) {
@@ -70,9 +70,8 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
         const pollInterval = setInterval(async () => {
             try {
                 const response = await fetch('https://api.capyrpi.org/v1/auth/me', {
-                    headers: {
-                        Accept: 'application/json',
-                    },
+                    headers: { Accept: 'application/json' },
+                    credentials: 'include'
                 });
 
                 if (response.ok) {
