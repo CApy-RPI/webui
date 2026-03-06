@@ -3,9 +3,9 @@ import '../css/organizations.css';
 type OrganizationProps = {
     title: string;
     desc: string;
-}
+};
 
-export default function Organization({title, desc}:OrganizationProps) {
+export default function Organization({ title, desc }: OrganizationProps) {
     return (
         <div className="org">
             <div className="org-metadata">
@@ -14,12 +14,8 @@ export default function Organization({title, desc}:OrganizationProps) {
                 <span>{desc}</span>
             </div>
             <div className="org-btns">
-                <button className="events-btn">
-                    Events
-                </button>
-                <button className="manage-btn">
-                    Manage
-                </button>
+                <button className="events-btn">Events</button>
+                <button className="manage-btn">Manage</button>
             </div>
         </div>
     );

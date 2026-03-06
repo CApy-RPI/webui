@@ -18,7 +18,6 @@ section as well.
     --site-transition: 0.25s;
     --site-font: 'Asap', sans-serif;
 
-
     /* CAPY COLOR SUITE ========================= */
 
     /* All colors used on the site are found here */
@@ -31,9 +30,7 @@ section as well.
     --highlight: #f4f8f6;
     --off-black: #20201f;
 
-
     /* MISC DEV VARIABLES ======================= */
-
 
     /* COLOR VARIABLES ========================== */
 
@@ -54,7 +51,7 @@ section as well.
     --carousel-bg: #f2dede;
 
     /* Organizations */
-    --org-bg: #D9D9D9;
+    --org-bg: #d9d9d9;
     --img-placeholder-bg: #b3807d;
     --general-org-btn-bg: #b3807d;
     --manage-org-btn-bg: #97bdc6;
@@ -71,7 +68,6 @@ section as well.
     --standard-bw-text: var(--off-white);
 
     /* Navbar */
-
 
     /* Carousel */
 }

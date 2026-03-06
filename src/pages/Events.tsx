@@ -4,8 +4,8 @@ export default function Events() {
     return (
         <>
             <div className={`carousel-page-container`}>
-                <Carousel type="my events"/>
-                <Carousel type="recommended"/>
+                <Carousel type="my events" />
+                <Carousel type="recommended" />
             </div>
         </>
     );
