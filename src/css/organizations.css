@@ -5,6 +5,7 @@
     background: var(--org-bg);
     padding: 1.25rem;
     color: var(--standard-bw-text);
+    cursor: pointer;
 }
 
 .org-metadata {
