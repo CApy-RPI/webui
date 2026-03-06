@@ -7,19 +7,6 @@
 .carousel-container {
     display: flex;
     flex-direction: column;
-    align-items: center;
-}
-
-.carousel {
-    width: 72rem;
-    background: var(--carousel-bg);
-    height: 18rem;
-    border-radius: 2rem;
-    padding: 1rem;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 2rem;
 }
 
 .carousel-title {
@@ -27,4 +14,109 @@
     font-size: 1rem;
     color: var(--standard-bw-text);
     font-weight: 600;
+}
+
+.carousel-wrapper {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border-radius: 2rem;
+    background: var(--carousel-bg);
+    gap: 1rem;
+}
+
+/* main carousel stage */
+.carousel {
+    width: 72rem;
+    height: 18rem;
+    padding: 1rem;
+    position: relative;
+    overflow: hidden;
+}
+
+/* card positioning */
+.carousel-item {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.7);
+    opacity: 0;
+    transition:
+        transform 0.4s ease,
+        opacity 0.4s ease,
+        box-shadow 0.4s ease;
+    will-change: transform;
+}
+
+/* ===================================================== */
+
+/* OFFSETS                                               */
+
+/* ===================================================== */
+
+.offset-2 {
+    transform: translate(90%, -50%) scale(0.75);
+    opacity: 0.8;
+}
+
+.offset-1 {
+    transform: translate(50%, -50%) scale(0.9);
+    opacity: 1;
+    z-index: 2;
+}
+
+.offset-0 {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+    z-index: 3;
+    box-shadow: 0 0 1rem gray;
+}
+
+/* stylelint-disable-next-line selector-class-pattern */
+.offset--1 {
+    transform: translate(-150%, -50%) scale(0.9);
+    opacity: 1;
+    z-index: 2;
+}
+
+/* stylelint-disable-next-line selector-class-pattern */
+.offset--2 {
+    transform: translate(-190%, -50%) scale(0.75);
+    opacity: 0.8;
+}
+
+/* hide far cards */
+[class*='offset-3'],
+[class*='offset--3'] {
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* arrow buttons */
+.carousel-arrow {
+    z-index: 10;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    font-size: 2.5rem;
+    color: black;
+    transition: var(--site-transition);
+}
+
+.carousel-arrow:hover {
+    scale: 1.1;
+}
+
+/* left arrow */
+.carousel-arrow.left {
+    margin-left: 0.5rem;
+}
+
+/* right arrow */
+.carousel-arrow.right {
+    margin-right: 0.5rem;
 }
