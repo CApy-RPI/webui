@@ -33,7 +33,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
         try {
             setLoading(true);
 
-            const response = await fetch('https://api.capyrpi.org/v1/auth/me', {
+            const response = await fetch('https://capyrpi.org/api/v1/auth/me', {
                 headers: { Accept: 'application/json' },
                 credentials: 'include',
             });
@@ -62,14 +62,14 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
     const login = (provider: 'google' | 'microsoft'): void => {
         const url =
             provider === 'google'
-                ? 'https://api.capyrpi.org/v1/auth/google'
-                : 'https://api.capyrpi.org/v1/auth/microsoft';
+                ? 'https://capyrpi.org/api/v1/auth/google'
+                : 'https://capyrpi.org/api/v1/auth/microsoft';
 
         window.open(url, '_blank');
 
         const pollInterval = setInterval(async () => {
             try {
-                const response = await fetch('https://api.capyrpi.org/v1/auth/me', {
+                const response = await fetch('https://capyrpi.org/api/v1/auth/me', {
                     headers: { Accept: 'application/json' },
                     credentials: 'include',
                 });
@@ -92,7 +92,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
     };
     const logout = async (): Promise<void> => {
         try {
-            await fetch('https://api.capyrpi.org/v1/auth/logout', {
+            await fetch('https://capyrpi.org/api/v1/auth/logout', {
                 method: 'POST',
             });
 
