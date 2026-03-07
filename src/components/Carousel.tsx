@@ -1,38 +1,31 @@
 import { useState } from 'react';
 import '../css/carousel.css';
-import Organization from './Organization';
 
-type CarouselProps = {
-    type: string;
-};
+import EventPanel from './EventCarouselPanel.tsx';
+import OrganizationPanel from './OrganizationCarouselPanel.tsx';
 
-export default function Carousel({ type }: CarouselProps) {
+import type { Event } from '../types/Event.ts';
+import type { Organization } from '../types/Organization.ts';
+
+type CarouselProps =
+    | { type: 'event'; title: string; data: Event[] }
+    | { type: 'organization'; title: string; data: Organization[] };
+
+export default function Carousel({ type, title, data }: CarouselProps) {
+    console.log(data);
     const [active, setActive] = useState(0);
-
-    const organizations = [
-        { title: 'Math Club', desc: 'The RPI Math Faculty approved and Union affiliated math club!' },
-        { title: 'Science Club', desc: 'The RPI Math Faculty approved and Union affiliated science club!' },
-        { title: 'Gym Club', desc: 'The RPI Math Faculty approved and Union affiliated gym club!' },
-        { title: 'Dance Club', desc: 'The RPI Math Faculty approved and Union affiliated dance club!' },
-        { title: 'English Club', desc: 'The RPI Math Faculty approved and Union affiliated english club!' },
-        { title: 'Coding Club', desc: 'The RPI Math Faculty approved and Union affiliated coding club!' },
-        { title: 'Archery Club', desc: 'The RPI Math Faculty approved and Union affiliated archery club!' },
-        { title: 'Golf Club', desc: 'The RPI Math Faculty approved and Union affiliated golf club!' },
-        { title: 'Running Club', desc: 'The RPI Math Faculty approved and Union affiliated running club!' },
-        { title: 'Study Club', desc: 'The RPI Math Faculty approved and Union affiliated study club!' },
-    ];
 
     const moveLeft = () => {
         setActive((prev) => Math.max(prev - 1, 0));
     };
 
     const moveRight = () => {
-        setActive((prev) => Math.min(prev + 1, organizations.length - 1));
+        setActive((prev) => Math.min(prev + 1, data.length - 1));
     };
 
     return (
         <div className="carousel-container">
-            <span className="carousel-title">{type}</span>
+            <span className="carousel-title">{title}</span>
 
             <div className="carousel-wrapper">
                 <button className="carousel-arrow left" onClick={moveLeft}>
@@ -40,18 +33,29 @@ export default function Carousel({ type }: CarouselProps) {
                 </button>
 
                 <div className="carousel">
-                    {organizations.map((org, index) => {
-                        const offset = index - active;
-                        return (
-                            <Organization
-                                key={index}
-                                className={`carousel-item offset-${offset}`}
-                                title={org.title}
-                                desc={org.desc}
-                                onClick={() => setActive(index)}
-                            />
-                        );
-                    })}
+                    {type === 'event'
+                        ? data.map((event, index) => {
+                              const offset = index - active;
+
+                              return (
+                                  <EventPanel
+                                      event={event}
+                                      className={`carousel-item offset-${offset}`}
+                                      onClick={() => setActive(index)}
+                                  />
+                              );
+                          })
+                        : data.map((org, index) => {
+                              const offset = index - active;
+
+                              return (
+                                  <OrganizationPanel
+                                      organization={org}
+                                      className={`carousel-item offset-${offset}`}
+                                      onClick={() => setActive(index)}
+                                  />
+                              );
+                          })}
                 </div>
 
                 <button className="carousel-arrow right" onClick={moveRight}>

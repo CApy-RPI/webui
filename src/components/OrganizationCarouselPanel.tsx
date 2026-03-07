@@ -1,20 +1,21 @@
 import '../css/organizations.css';
 import '../css/carousel.css';
 
-type OrganizationProps = {
-    title: string;
-    desc: string;
+import type { Organization } from '../types/Organization.ts';
+
+type OrganizationCarouselPanelProps = {
+    organization: Organization;
     className: string;
     onClick?: () => void;
 };
 
-export default function Organization({ title, desc, className, onClick }: OrganizationProps) {
+export default function Organization({ organization, className, onClick }: OrganizationCarouselPanelProps) {
     return (
         <div className={`org ${className}`} onClick={onClick}>
             <div className="org-metadata">
                 <div className="image-placeholder"></div>
-                <span className="org-title">{title}</span>
-                <span>{desc}</span>
+                <span className="org-title">{organization.name}</span>
+                <span>{organization.description}</span>
             </div>
             <div className="org-btns">
                 <button className="events-btn">Events</button>
