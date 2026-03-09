@@ -13,7 +13,7 @@ function App() {
         <>
             <AuthProvider>
                 <ThemeProvider>
-                    <BrowserRouter basename="/app">
+                    <BrowserRouter>
                         <Routes>
                             <Route element={<AppLayout />}>
                                 <Route path="/profile" element={<Profile />} />
