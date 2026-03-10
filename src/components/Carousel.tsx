@@ -12,7 +12,6 @@ type CarouselProps =
     | { type: 'organization'; title: string; data: Organization[] };
 
 export default function Carousel({ type, title, data }: CarouselProps) {
-    console.log(data);
     const [active, setActive] = useState(0);
 
     const moveLeft = () => {
@@ -40,7 +39,7 @@ export default function Carousel({ type, title, data }: CarouselProps) {
                               return (
                                   <EventPanel
                                       event={event}
-                                      className={`carousel-item offset-${offset}`}
+                                      className={`carousel-item ${type}-offset-${offset}`}
                                       onClick={() => setActive(index)}
                                   />
                               );
@@ -51,7 +50,7 @@ export default function Carousel({ type, title, data }: CarouselProps) {
                               return (
                                   <OrganizationPanel
                                       organization={org}
-                                      className={`carousel-item offset-${offset}`}
+                                      className={`carousel-item ${type}-offset-${offset}`}
                                       onClick={() => setActive(index)}
                                   />
                               );

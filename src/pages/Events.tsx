@@ -6,7 +6,6 @@ export default function Events() {
     // 1. Fetch my_events and rec_events
     // 2. Parse date/time types from string to date/time
     // 3. Make it into variables below:
-    // 4. Propogate to carousel with type
 
     /* Current API response:
         {
@@ -18,7 +17,7 @@ export default function Events() {
             "location": "string"
         }
     
-    Need:
+    Still Need:
         - description
         - organization
     */
@@ -70,6 +69,56 @@ export default function Events() {
             date_modified: new Date(),
             description: 'This is event 5 This is event 5 This is event 5 This is event 5',
             eid: '5',
+            event_time: new Date(),
+            location: 'EMPAC',
+            organization: 'AGT',
+            title: 'America Got Talent',
+        },
+        {
+            date_created: new Date(),
+            date_modified: new Date(),
+            description: 'This is event 6 This is event 6 This is event 6 This is event 6',
+            eid: '6',
+            event_time: new Date(),
+            location: 'Sage Dining Hall',
+            organization: 'CCPD',
+            title: 'Networking Session',
+        },
+        {
+            date_created: new Date(),
+            date_modified: new Date(),
+            description: 'This is event 7 This is event 7 This is event 7 This is event 7',
+            eid: '7',
+            event_time: new Date(),
+            location: 'EMPAC',
+            organization: 'AGT',
+            title: 'America Got Talent',
+        },
+        {
+            date_created: new Date(),
+            date_modified: new Date(),
+            description: 'This is event 5 This is event 5 This is event 5 This is event 5',
+            eid: '8',
+            event_time: new Date(),
+            location: 'EMPAC',
+            organization: 'AGT',
+            title: 'America Got Talent',
+        },
+        {
+            date_created: new Date(),
+            date_modified: new Date(),
+            description: 'This is event 5 This is event 5 This is event 5 This is event 5',
+            eid: '9',
+            event_time: new Date(),
+            location: 'EMPAC',
+            organization: 'AGT',
+            title: 'America Got Talent',
+        },
+        {
+            date_created: new Date(),
+            date_modified: new Date(),
+            description: 'This is event 5 This is event 5 This is event 5 This is event 5',
+            eid: '10',
             event_time: new Date(),
             location: 'EMPAC',
             organization: 'AGT',

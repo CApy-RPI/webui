@@ -13,7 +13,7 @@ export default function Organizations() {
             "location": "string"
         }
     
-    Need:
+    Still Need:
         - description
         - organization
     */
