@@ -49,53 +49,6 @@
     will-change: transform;
 }
 
-/* ===================================================== */
-
-/* OFFSETS                                               */
-
-/* ===================================================== */
-
-.offset-2 {
-    transform: translate(90%, -50%) scale(0.75);
-    opacity: 0.8;
-    z-index: 1;
-}
-
-.offset-1 {
-    transform: translate(50%, -50%) scale(0.9);
-    opacity: 1;
-    z-index: 2;
-}
-
-.offset-0 {
-    transform: translate(-50%, -50%) scale(1);
-    opacity: 1;
-    z-index: 3;
-    box-shadow: 0 0 1rem gray;
-}
-
-/* stylelint-disable-next-line selector-class-pattern */
-.offset--1 {
-    transform: translate(-150%, -50%) scale(0.9);
-    opacity: 1;
-    z-index: 2;
-}
-
-/* stylelint-disable-next-line selector-class-pattern */
-.offset--2 {
-    transform: translate(-190%, -50%) scale(0.75);
-    opacity: 0.8;
-    z-index: 1;
-}
-
-/* hide far cards */
-[class*='offset-3'],
-[class*='offset--3'] {
-    opacity: 0;
-    pointer-events: none;
-    z-index: 0;
-}
-
 /* arrow buttons */
 .carousel-arrow {
     z-index: 10;
@@ -122,4 +75,126 @@
 /* right arrow */
 .carousel-arrow.right {
     margin-right: 0.5rem;
+}
+
+/* ===================================================== */
+
+/* OFFSETS                                               */
+
+/* ===================================================== */
+
+.organization-offset-2 {
+    transform: translate(90%, -50%) scale(0.75);
+    opacity: 0.8;
+    z-index: 1;
+}
+
+.organization-offset-1 {
+    transform: translate(50%, -50%) scale(0.9);
+    opacity: 1;
+    z-index: 2;
+}
+
+.organization-offset-0 {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+    z-index: 3;
+    box-shadow: 0 0 1rem gray;
+}
+
+/* stylelint-disable-next-line selector-class-pattern */
+.organization-offset--1 {
+    transform: translate(-150%, -50%) scale(0.9);
+    opacity: 1;
+    z-index: 2;
+}
+
+/* stylelint-disable-next-line selector-class-pattern */
+.organization-offset--2 {
+    transform: translate(-190%, -50%) scale(0.75);
+    opacity: 0.8;
+    z-index: 1;
+}
+
+/* hide far cards */
+[class*='organization-offset-3'],
+[class*='organization-offset--3'] {
+    opacity: 0;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.event-offset-4 {
+    transform: translate(160%, -50%) scale(0.6);
+    filter: saturate(0.2);
+    opacity: 0.8;
+    z-index: 1;
+}
+
+.event-offset-3 {
+    transform: translate(140%, -50%) scale(0.76);
+    filter: saturate(0.4);
+    opacity: 1;
+    z-index: 2;
+}
+
+.event-offset-2 {
+    transform: translate(105%, -50%) scale(0.88);
+    filter: saturate(0.6);
+    opacity: 1;
+    z-index: 3;
+}
+
+.event-offset-1 {
+    transform: translate(45%, -50%) scale(0.96);
+    filter: saturate(0.8);
+    opacity: 1;
+    z-index: 4;
+}
+
+.event-offset-0 {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+    z-index: 5;
+    box-shadow: 0 0 0.75rem gray;
+}
+
+/* stylelint-disable-next-line selector-class-pattern */
+.event-offset--1 {
+    transform: translate(-145%, -50%) scale(0.96);
+    filter: saturate(0.8);
+    opacity: 1;
+    z-index: 4;
+}
+
+/* stylelint-disable-next-line selector-class-pattern */
+.event-offset--2 {
+    transform: translate(-205%, -50%) scale(0.88);
+    filter: saturate(0.6);
+    opacity: 1;
+    z-index: 3;
+}
+
+/* stylelint-disable-next-line selector-class-pattern */
+.event-offset--3 {
+    transform: translate(-240%, -50%) scale(0.76);
+    filter: saturate(0.4);
+    opacity: 1;
+    z-index: 2;
+}
+
+/* stylelint-disable-next-line selector-class-pattern */
+.event-offset--4 {
+    transform: translate(-260%, -50%) scale(0.6);
+    filter: saturate(0.2);
+    opacity: 0.8;
+    z-index: 1;
+}
+
+/* hide far cards */
+[class*='event-offset-5'],
+[class*='eventoffset--5'] {
+    opacity: 0;
+    pointer-events: none;
+    z-index: 0;
 }

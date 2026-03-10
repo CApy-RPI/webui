@@ -8,12 +8,12 @@ import Testing from './pages/Testing.tsx'; // temp page
 import Profile from './pages/Profile.tsx';
 import { AuthProvider } from './contexts/AuthContext.tsx';
 
-function App() {
+export default function App() {
     return (
         <>
             <AuthProvider>
                 <ThemeProvider>
-                    <BrowserRouter>
+                    <BrowserRouter basename="/app">
                         <Routes>
                             <Route element={<AppLayout />}>
                                 <Route path="/profile" element={<Profile />} />
@@ -29,5 +29,3 @@ function App() {
         </>
     );
 }
-
-export default App;
