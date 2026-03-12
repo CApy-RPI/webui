@@ -1,14 +1,13 @@
 import { useTheme } from '../contexts/ThemeContext';
+import '../css/dark-mode-toggle.css';
 
 export default function DarkModeToggle() {
     const { theme, toggleTheme } = useTheme();
 
     return (
-        <input
-            type="checkbox"
-            checked={theme === 'dark'}
-            onChange={toggleTheme}
-            style={{ height: '20px', width: '20px' }}
-        />
+        <label className="theme-switch"> 
+            <input type="checkbox" checked={theme === 'dark'} onChange={toggleTheme} />
+            <span className="theme-slider" />
+        </label>
     );
 }

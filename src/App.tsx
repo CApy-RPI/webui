@@ -6,6 +6,7 @@ import Events from './pages/Events.tsx';
 import Organizations from './pages/Organizations.tsx';
 import Testing from './pages/Testing.tsx'; // temp page
 import Profile from './pages/Profile.tsx';
+import DarkModeToggle from './components/DarkModeToggle';
 import { AuthProvider } from './contexts/AuthContext.tsx';
 
 export default function App() {
@@ -23,6 +24,7 @@ export default function App() {
                                 <Route path="/testing" element={<Testing />} />
                             </Route>
                         </Routes>
+                        <DarkModeToggle />
                     </BrowserRouter>
                 </ThemeProvider>
             </AuthProvider>
