@@ -1,4 +1,4 @@
-import DarkModeToggle from '../components/DarkModeToggle.tsx';
+import DarkModeToggle from '../components/DarkModeToggle';
 
 export default function Testing() {
     return (
