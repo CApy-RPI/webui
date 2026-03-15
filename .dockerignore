@@ -7,6 +7,4 @@ coverage
 .idea
 .DS_Store
 *.log
-.env
-.env.*
 README.md
