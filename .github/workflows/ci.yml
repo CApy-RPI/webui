@@ -88,6 +88,10 @@ jobs:
             - name: Checkout code
               uses: actions/checkout@v4
 
+            - name: Create .env file
+              run: |
+                echo "VITE_API_URL=http://localhost:8080" >> .env
+
             - name: Set up Docker Buildx
               uses: docker/setup-buildx-action@v3
 
@@ -103,7 +107,12 @@ jobs:
         runs-on: ubuntu-latest
 
         steps:
+            - name: Checkout code
             - uses: actions/checkout@v4
+
+            - name: Create .env file
+              run: |
+                echo "VITE_API_URL=http://localhost:8080" >> .env
 
             - name: Install dependencies
               run: npm ci
@@ -125,7 +134,12 @@ jobs:
         runs-on: ubuntu-latest
 
         steps:
+            - name: Checkout code
             - uses: actions/checkout@v4
+
+            - name: Create .env file
+              run: |
+                echo "VITE_API_URL=http://localhost:8080" >> .env
 
             - name: Install dependencies
               run: npm ci
@@ -147,7 +161,12 @@ jobs:
         runs-on: ubuntu-latest
 
         steps:
+            - name: Checkout code
             - uses: actions/checkout@v4
+
+            - name: Create .env file
+              run: |
+                echo "VITE_API_URL=http://localhost:8080" >> .env
 
             - name: Install dependencies
               run: npm ci
@@ -169,7 +188,12 @@ jobs:
         runs-on: ubuntu-latest
 
         steps:
+            - name: Checkout code
             - uses: actions/checkout@v4
+
+            - name: Create .env file
+              run: |
+                echo "VITE_API_URL=http://localhost:8080" >> .env
 
             - name: Install dependencies
               run: npm ci
