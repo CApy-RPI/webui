@@ -4,8 +4,8 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "tsc -b && vite build",
+    "dev": "vite --mode webui",
+    "build": "tsc -b && vite build --mode webui",
     "preview": "vite preview",
     "lint-check": "eslint . && prettier --check . && stylelint \"**/*.{css,scss}\"",
     "lint-fix": "eslint . --fix && prettier --write . && stylelint \"**/*.{css,scss}\" --fix"
