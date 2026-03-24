@@ -17,11 +17,35 @@ export default function App() {
                     <BrowserRouter basename="/app">
                         <Routes>
                             <Route element={<AppLayout />}>
-                                <Route path="/profile" element={<ProtectedRoute> <Profile /> </ProtectedRoute>} />
-                                <Route path="/" element={<ProtectedRoute> <Home /> </ProtectedRoute>} />
+                                <Route
+                                    path="/profile"
+                                    element={
+                                        <ProtectedRoute>
+                                            {' '}
+                                            <Profile />{' '}
+                                        </ProtectedRoute>
+                                    }
+                                />
+                                <Route
+                                    path="/"
+                                    element={
+                                        <ProtectedRoute>
+                                            {' '}
+                                            <Home />{' '}
+                                        </ProtectedRoute>
+                                    }
+                                />
                                 <Route path="/events" element={<Events />} />
                                 <Route path="/organizations" element={<Organizations />} />
-                                <Route path="/testing" element={<ProtectedRoute> <Testing /> </ProtectedRoute>} />
+                                <Route
+                                    path="/testing"
+                                    element={
+                                        <ProtectedRoute>
+                                            {' '}
+                                            <Testing />{' '}
+                                        </ProtectedRoute>
+                                    }
+                                />
                             </Route>
                         </Routes>
                     </BrowserRouter>

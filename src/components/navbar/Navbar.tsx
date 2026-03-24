@@ -9,7 +9,8 @@ type IndicatorState = { left: number; width: number };
 
 export default function Navbar() {
     const { user } = useAuth();
-    const [showLogin, setShowLogin] = useState(false);    const navbarRef = useRef<HTMLDivElement>(null);
+    const [showLogin, setShowLogin] = useState(false);
+    const navbarRef = useRef<HTMLDivElement>(null);
     const location = useLocation();
     const [indicator, setIndicator] = useState<IndicatorState>({ left: 0, width: 0 });
 
@@ -64,12 +65,7 @@ export default function Navbar() {
 
             {user && <NavbarLink label="test" nav="/testing" />}
 
-            {!user && (
-                <NavbarLink
-                    label="login"
-                    onClick={() => setShowLogin(true)}
-                />
-            )}
+            {!user && <NavbarLink label="login" onClick={() => setShowLogin(true)} />}
 
             <LoginPopup isOpen={showLogin} onClose={() => setShowLogin(false)} />
         </div>
