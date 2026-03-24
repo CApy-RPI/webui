@@ -7,6 +7,7 @@ import Organizations from './pages/Organizations.tsx';
 import Testing from './pages/Testing.tsx'; // temp page
 import Profile from './pages/Profile.tsx';
 import { AuthProvider } from './contexts/AuthContext.tsx';
+import ProtectedRoute from './components/routing/ProtectedRoute';
 
 export default function App() {
     return (
@@ -16,11 +17,11 @@ export default function App() {
                     <BrowserRouter basename="/app">
                         <Routes>
                             <Route element={<AppLayout />}>
-                                <Route path="/profile" element={<Profile />} />
-                                <Route path="/" element={<Home />} />
+                                <Route path="/profile" element={<ProtectedRoute> <Profile /> </ProtectedRoute>} />
+                                <Route path="/" element={<ProtectedRoute> <Home /> </ProtectedRoute>} />
                                 <Route path="/events" element={<Events />} />
                                 <Route path="/organizations" element={<Organizations />} />
-                                <Route path="/testing" element={<Testing />} />
+                                <Route path="/testing" element={<ProtectedRoute> <Testing /> </ProtectedRoute>} />
                             </Route>
                         </Routes>
                     </BrowserRouter>
