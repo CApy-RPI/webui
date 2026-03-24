@@ -61,10 +61,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
     };
 
     const login = (provider: 'google' | 'microsoft'): void => {
-        const url =
-            provider === 'google'
-                ? `${AUTH_API_BASE}/google`
-                : `${AUTH_API_BASE}/microsoft`;
+        const url = provider === 'google' ? `${AUTH_API_BASE}/google` : `${AUTH_API_BASE}/microsoft`;
 
         window.open(url, '_blank');
 
