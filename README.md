@@ -57,15 +57,6 @@ From the root level of the repository:
 npm install
 ```
 
-### Environment Variables
-Store this in `.env.webui`
-```
-# =============================================================================
-# WEBUI
-# =============================================================================
-VITE_API_URL=http://localhost:8080
-```
-
 ### Run the Site
 
 ```bash

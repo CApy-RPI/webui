@@ -23,6 +23,7 @@ type AuthProviderProps = {
 };
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
+const AUTH_API_BASE = '/api/v1/auth';
 
 export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
     const [user, setUser] = useState<User | null>(null);
@@ -33,7 +34,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
         try {
             setLoading(true);
 
-            const response = await fetch(import.meta.env.VITE_API_URL + '/api/v1/auth/me', {
+            const response = await fetch(`${AUTH_API_BASE}/me`, {
                 headers: { Accept: 'application/json' },
                 credentials: 'include',
             });
@@ -62,14 +63,14 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
     const login = (provider: 'google' | 'microsoft'): void => {
         const url =
             provider === 'google'
-                ? import.meta.env.VITE_API_URL + '/api/v1/auth/google'
-                : import.meta.env.VITE_API_URL + '/api/v1/auth/microsoft';
+                ? `${AUTH_API_BASE}/google`
+                : `${AUTH_API_BASE}/microsoft`;
 
         window.open(url, '_blank');
 
         const pollInterval = setInterval(async () => {
             try {
-                const response = await fetch(import.meta.env.VITE_API_URL + '/api/v1/auth/me', {
+                const response = await fetch(`${AUTH_API_BASE}/me`, {
                     headers: { Accept: 'application/json' },
                     credentials: 'include',
                 });
@@ -92,8 +93,9 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
     };
     const logout = async (): Promise<void> => {
         try {
-            await fetch(import.meta.env.VITE_API_URL + '/api/v1/auth/logout', {
+            await fetch(`${AUTH_API_BASE}/logout`, {
                 method: 'POST',
+                credentials: 'include',
             });
 
             setUser(null);

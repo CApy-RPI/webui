@@ -8,5 +8,5 @@ coverage
 .DS_Store
 *.log
 README.md
-.env*
-!.env.webui
+*.env
+.DS_Store
