@@ -1,5 +1,6 @@
 /* eslint-disable react-refresh/only-export-components*/
-import React, { createContext, useContext, useState, type ReactNode } from 'react';
+import React, { createContext, useContext, useState, useEffect, type ReactNode } from 'react';
+import { authApi } from '../api/auth';
 
 type User = {
     uid?: string;
@@ -23,7 +24,6 @@ type AuthProviderProps = {
 };
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
-const AUTH_API_BASE = '/api/v1/auth';
 
 export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
     const [user, setUser] = useState<User | null>(null);
@@ -33,77 +33,42 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
     const fetchMe = async (): Promise<void> => {
         try {
             setLoading(true);
+            setError(null);
 
-            const response = await fetch(`${AUTH_API_BASE}/me`, {
-                headers: { Accept: 'application/json' },
-                credentials: 'include',
-            });
-
-            if (response.ok) {
-                const data: User = await response.json();
-                setUser(data);
-            } else {
-                setUser(null);
-            }
+            const data = await authApi.getMe();
+            setUser(data);
         } catch (err: unknown) {
-            if (err instanceof Error) {
-                console.error('Failed to fetch user:', err);
-                setError(err.message);
-            } else {
-                console.error('Unknown error:', err);
-                setError('Unknown error');
-            }
-
             setUser(null);
+            setError(err instanceof Error ? err.message : 'Unknown error');
         } finally {
             setLoading(false);
         }
     };
 
+    useEffect(() => {
+        fetchMe();
+
+        const timeout = setTimeout(() => {
+            fetchMe();
+        }, 1000);
+
+        return () => clearTimeout(timeout);
+    }, []);
+
     const login = (provider: 'google' | 'microsoft'): void => {
-        const url = provider === 'google' ? `${AUTH_API_BASE}/google` : `${AUTH_API_BASE}/microsoft`;
-
-        window.open(url, '_blank');
-
-        const pollInterval = setInterval(async () => {
-            try {
-                const response = await fetch(`${AUTH_API_BASE}/me`, {
-                    headers: { Accept: 'application/json' },
-                    credentials: 'include',
-                });
-
-                if (response.ok) {
-                    const data: User = await response.json();
-                    setUser(data);
-                    clearInterval(pollInterval);
-                }
-            } catch (err: unknown) {
-                if (err instanceof Error) {
-                    console.error('Polling failed:', err.message);
-                }
-            }
-        }, 3000);
-
-        setTimeout(() => {
-            clearInterval(pollInterval);
-        }, 120000);
+        authApi.login(provider);
     };
+
     const logout = async (): Promise<void> => {
         try {
-            await fetch(`${AUTH_API_BASE}/logout`, {
-                method: 'POST',
-                credentials: 'include',
-            });
-
+            await authApi.logout();
             setUser(null);
-
-            window.location.href = '/app/';
+            window.location.href = '/app';
         } catch (err: unknown) {
-            if (err instanceof Error) {
-                console.error('Logout failed:', err.message);
-            }
+            console.error('Logout failed:', err);
         }
     };
+
     const value: AuthContextType = {
         user,
         loading,
