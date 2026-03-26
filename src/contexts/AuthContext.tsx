@@ -47,6 +47,12 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
 
     useEffect(() => {
         fetchMe();
+
+        const timeout = setTimeout(() => {
+            fetchMe();
+        }, 1000);
+
+        return () => clearTimeout(timeout);
     }, []);
 
     const login = (provider: 'google' | 'microsoft'): void => {
@@ -61,7 +67,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
         } catch (err: unknown) {
             console.error('Logout failed:', err);
         }
-    }
+    };
 
     const value: AuthContextType = {
         user,
