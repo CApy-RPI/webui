@@ -1,7 +1,7 @@
 /* eslint-disable react-refresh/only-export-components*/
 import React, { createContext, useContext, useState, type ReactNode } from 'react';
 
-type User = {
+export type AuthUser = {
     uid?: string;
     email?: string;
     first_name?: string;
@@ -10,7 +10,7 @@ type User = {
 };
 
 type AuthContextType = {
-    user: User | null;
+    user: AuthUser | null;
     loading: boolean;
     error: string | null;
     login: (provider: 'google' | 'microsoft') => void;
@@ -25,7 +25,7 @@ type AuthProviderProps = {
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
 export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
-    const [user, setUser] = useState<User | null>(null);
+    const [user, setUser] = useState<AuthUser | null>(null);
     const [loading, setLoading] = useState<boolean>(true);
     const [error, setError] = useState<string | null>(null);
 
@@ -39,7 +39,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
             });
 
             if (response.ok) {
-                const data: User = await response.json();
+                const data: AuthUser = await response.json();
                 setUser(data);
             } else {
                 setUser(null);
@@ -75,7 +75,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
                 });
 
                 if (response.ok) {
-                    const data: User = await response.json();
+                    const data: AuthUser = await response.json();
                     setUser(data);
                     clearInterval(pollInterval);
                 }
