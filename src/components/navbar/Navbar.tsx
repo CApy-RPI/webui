@@ -1,11 +1,15 @@
 import { useLayoutEffect, useRef, useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
+import { useAuth } from '../../contexts/AuthContext';
 import NavbarLink from './NavbarLink';
+import LoginPopup from '../LoginPopup';
 import '../../css/navbar.css';
 
 type IndicatorState = { left: number; width: number };
 
 export default function Navbar() {
+    const { user } = useAuth();
+    const [showLogin, setShowLogin] = useState(false);
     const navbarRef = useRef<HTMLDivElement>(null);
     const location = useLocation();
     const [indicator, setIndicator] = useState<IndicatorState>({ left: 0, width: 0 });
@@ -52,11 +56,18 @@ export default function Navbar() {
                     width: `${indicator.width}px`,
                 }}
             />
-            <NavbarLink label="profile" nav="/profile" />
-            <NavbarLink label="home" nav="/" />
+
+            {user && <NavbarLink label="profile" nav="/profile" />}
+            {user && <NavbarLink label="home" nav="/" />}
+
             <NavbarLink label="events" nav="/events" />
             <NavbarLink label="orgs" nav="/organizations" />
-            <NavbarLink label="test" nav="/testing" />
+
+            {user && <NavbarLink label="test" nav="/testing" />}
+
+            {!user && <NavbarLink label="login" onClick={() => setShowLogin(true)} />}
+
+            <LoginPopup isOpen={showLogin} onClose={() => setShowLogin(false)} />
         </div>
     );
 }

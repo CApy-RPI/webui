@@ -3,13 +3,20 @@ import type { MouseEvent } from 'react';
 
 type NavbarLinkProps = {
     label: string;
-    nav: string;
+    nav?: string;
+    onClick?: () => void;
 };
 
-export default function NavbarLink({ label, nav }: NavbarLinkProps) {
+export default function NavbarLink({ label, nav, onClick }: NavbarLinkProps) {
     const navigate = useNavigate();
 
     const handleClick = (e: MouseEvent<HTMLAnchorElement>) => {
+        if (!nav) {
+            e.preventDefault();
+            onClick?.();
+            return;
+        }
+
         if (location.pathname === nav) {
             return;
         }
@@ -29,11 +36,12 @@ export default function NavbarLink({ label, nav }: NavbarLinkProps) {
         setTimeout(() => {
             content.classList.remove('page-transition');
         }, 400);
+        onClick?.();
     };
 
     return (
         <NavLink
-            to={nav}
+            to={nav ?? '#'}
             onClick={handleClick}
             className={({ isActive }) => `navlink ${isActive ? 'active-navlink' : ''}`}
         >
