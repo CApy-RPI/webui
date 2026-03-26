@@ -57,11 +57,11 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
         try {
             await authApi.logout();
             setUser(null);
-            window.location.href = '/app/';
+            window.location.href = '/app';
         } catch (err: unknown) {
             console.error('Logout failed:', err);
         }
-    };
+    }
 
     const value: AuthContextType = {
         user,
