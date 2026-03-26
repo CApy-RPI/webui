@@ -3,27 +3,22 @@ import type { AuthUser } from '../types/User.ts';
 
 export const authApi = {
     // Get current user
-    getMe: () => apiRequest<AuthUser>('/auth/me'),
+    getMe: () => apiRequest<AuthUser>('/api/auth/me'),
 
-    // Initiate Google OAth
-    loginWithGoogle: () => {
-        window.location.href = '/auth/google';
-    },
-
-    // Initiate Microsoft OAuth
-    loginWithMicrosoft: () => {
-        window.location.href = '/auth/microsoft';
+    // Initiate Auth
+    login: (provider: string) => {
+        window.location.href = `/api/auth/${provider}`;
     },
 
     // Logout
     logout: () =>
-        apiRequest<void>('/auth/logout', {
+        apiRequest<void>('/api/auth/logout', {
             method: 'POST',
         }),
 
     // Refresh token
     refresh: () =>
-        apiRequest<void>('/auth/refresh', {
+        apiRequest<void>('/api/auth/refresh', {
             method: 'POST',
         }),
 };

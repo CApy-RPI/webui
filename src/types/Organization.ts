@@ -16,7 +16,6 @@ export type UpdateOrganization = {
 };
 
 export type OrganizationUser = {
-    // TODO: API returns same as base User
     date_joined: string;
     email: string;
     first_name: string;
