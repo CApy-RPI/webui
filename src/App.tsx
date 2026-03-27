@@ -1,29 +1,31 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { ThemeProvider } from './contexts/ThemeContext';
 import AppLayout from './components/AppLayout.tsx';
 import Home from './pages/Home.tsx';
-import Register from './pages/Register.tsx';
-import Dashboard from './pages/Dashboard.tsx';
 import Events from './pages/Events.tsx';
-import Notifications from './pages/Notifications.tsx';
+import Organizations from './pages/Organizations.tsx';
+import Testing from './pages/Testing.tsx'; // temp page
 import Profile from './pages/Profile.tsx';
+import { AuthProvider } from './contexts/AuthContext.tsx';
 
-function App() {
+export default function App() {
     return (
         <>
-            <BrowserRouter>
-                <Routes>
-                    <Route path="/" element={<Home />} />
-                    <Route path="/register" element={<Register />} />
-                    <Route element={<AppLayout />}>
-                        <Route path="/dashboard" element={<Dashboard />} />
-                        <Route path="/events" element={<Events />} />
-                        <Route path="/notifications" element={<Notifications />} />
-                        <Route path="/profile" element={<Profile />} />
-                    </Route>
-                </Routes>
-            </BrowserRouter>
+            <AuthProvider>
+                <ThemeProvider>
+                    <BrowserRouter basename="/app">
+                        <Routes>
+                            <Route element={<AppLayout />}>
+                                <Route path="/profile" element={<Profile />} />
+                                <Route path="/" element={<Home />} />
+                                <Route path="/events" element={<Events />} />
+                                <Route path="/organizations" element={<Organizations />} />
+                                <Route path="/testing" element={<Testing />} />
+                            </Route>
+                        </Routes>
+                    </BrowserRouter>
+                </ThemeProvider>
+            </AuthProvider>
         </>
     );
 }
-
-export default App;

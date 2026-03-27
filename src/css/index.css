@@ -11,19 +11,44 @@
   --color-sidebar-accent-foreground: #ffffff;
   --color-sidebar-border: #3f3f46;
 
-  --color-header: var(--header-bg);
-  
-  --radius-md: 0.5rem;
+/* ================================================= */
+:root {
+    font-family: var(--site-font);
+    line-height: 1.5;
+    font-weight: 400;
+    color-scheme: light dark;
+    color: rgb(255 255 255 / 87%);
+    background-color: var(--site-bg);
+    font-synthesis: none;
+    text-rendering: optimizelegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
-:root {
-  /* Exact colors from css/colors.css */
-  --site-bg: #1b1b1c;
-  --header-bg: #222b5e;
-  --sidebar-bg: #344154;
-  --sidebar-active-link-bg: #4780a3;
+body {
+    margin: 0;
+    display: flex;
+    place-items: center;
+    min-width: 320px;
+    min-height: 100vh;
+}
 
-  /* Layout dimensions from css/sidebar.css and css/header.css */
-  --sidebar-width: 16rem;
-  --header-height: 5rem;
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+h1 {
+    color: var(--standard-text);
+    font-weight: 500;
+}
+
+/* ================================================= */
+
+/*  END OF RANDOM AUTO-GENERATED STYLES            */
+
+/* ================================================= */
+.hide {
+    display: none;
 }
