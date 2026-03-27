@@ -14,7 +14,7 @@ import {
 import { NavLink } from "react-router-dom"
 import { LayoutDashboard, Calendar, Bell, User, Home } from "lucide-react"
 
-// This replaces your manual links from Sidebar.tsx
+// replaces manual links from Sidebar.tsx
 const mainItems = [
   { title: "Dashboard", url: "/dashboard", icon: LayoutDashboard },
   { title: "Events", url: "/events", icon: Calendar },
