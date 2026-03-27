@@ -1,6 +1,16 @@
-/* ================================================= */
+@import "tailwindcss";
 
-/*  RANDOM AUTO-GENERATED STYLES                   */
+@theme {
+  /* Mapping groupmate's custom variables to Tailwind */
+  --color-background: var(--site-bg);
+  --color-foreground: #ffffff;
+  
+  --color-sidebar: var(--sidebar-bg);
+  --color-sidebar-foreground: #ffffff;
+  --color-sidebar-accent: var(--sidebar-active-link-bg);
+  --color-sidebar-accent-foreground: #ffffff;
+  --color-sidebar-border: #3f3f46;
+}
 
 /* ================================================= */
 :root {
